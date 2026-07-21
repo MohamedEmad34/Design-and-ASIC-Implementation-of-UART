@@ -1,172 +1,253 @@
-UART-ASIC-RTL-to-GDSII/
-│
-├── RTL/
-├── Testbench/
-├── Constraints/
-├── Scripts/
-├── Reports/
-│   ├── Timing/
-│   ├── Area/
-│   └── Power/
-├── Layout/
-├── GDS/
-├── images/
-│   ├── uart_block.png
-│   ├── waveform.png
-│   ├── floorplan.png
-│   ├── placement.png
-│   ├── cts.png
-│   ├── routing.png
-│   └── layout.png
-├── README.md
-└── LICENSE
-# UART ASIC Design Flow (RTL to GDSII)
+# UART ASIC RTL-to-GDSII Implementation
 
-## Overview
+<p align="center">
 
-This repository presents the complete ASIC implementation flow of a **Universal Asynchronous Receiver/Transmitter (UART)**, starting from RTL design and ending with the final GDSII layout.
+![Verilog](https://img.shields.io/badge/Language-Verilog-blue)
+![Synopsys](https://img.shields.io/badge/EDA-Synopsys-success)
+![RTL to GDSII](https://img.shields.io/badge/Flow-RTL--to--GDSII-orange)
+![Technology](https://img.shields.io/badge/Technology-SAED32nm-red)
 
-The project demonstrates a complete digital ASIC flow using Synopsys EDA tools and the **SAED 32 nm CMOS technology library**.
+</p>
+
+<p align="center">
+<img src="images/UART_Block_Diagram.png" width="900">
+</p>
 
 ---
 
-## Features
+# Overview
 
-- UART Transmitter (TX)
-- UART Receiver (RX)
-- Finite State Machine (FSM) based architecture
-- RTL to GDSII Implementation
-- Timing-driven Physical Design
+This repository demonstrates the complete ASIC implementation flow of a **Universal Asynchronous Receiver/Transmitter (UART)** from **RTL to GDSII**.
 
----
+The design is implemented using **Verilog HDL**, functionally verified with **Synopsys VCS**, synthesized using **Synopsys Design Compiler**, and physically implemented using **Synopsys IC Compiler II (ICC2)** targeting the **SAED 32nm CMOS Standard Cell Library**.
 
-## Design Flow
-
-✔ RTL Design (Verilog HDL)
-
-✔ Functional Verification (Synopsys VCS)
-
-✔ Logic Synthesis (Synopsys Design Compiler)
-
-✔ Floorplanning
-
-✔ Power Planning
-
-✔ Placement Optimization
-
-✔ Clock Tree Synthesis (CTS)
-
-✔ Routing
-
-✔ Timing Closure
-
-✔ Physical Verification
-
-✔ GDSII Generation
+The project follows a complete industrial ASIC design methodology including RTL design, synthesis, floorplanning, placement, CTS, routing, timing closure, and physical verification.
 
 ---
 
-## Tools
+# Table of Contents
 
-| Tool | Purpose |
-|-------|----------|
-| Verilog HDL | RTL Design |
-| Synopsys VCS | Functional Simulation |
-| Synopsys Design Compiler | Logic Synthesis |
-| Synopsys IC Compiler II | Physical Design |
-| SAED 32nm Library | Standard Cell Library |
+- Overview
+- UART Architecture
+- ASIC Design Flow
+- Design Tools
+- Project Structure
+- Simulation Results
+- Floorplan
+- Placement
+- Clock Tree Synthesis
+- Routing
+- Final Layout
+- Reports
+- Technology
+- Author
 
 ---
 
-## UART Overview
+# UART Overview
 
 UART (Universal Asynchronous Receiver/Transmitter) is one of the most widely used asynchronous serial communication protocols.
 
-It enables communication between two devices using only two signal lines:
+It enables communication between two digital devices using only two wires:
 
 - TX (Transmit)
 - RX (Receive)
 
-UART is commonly used in:
+UART is commonly used in
 
 - Embedded Systems
+- ASIC Design
+- FPGA Design
 - Microcontrollers
 - SoCs
-- FPGA Designs
-- ASIC Designs
 
 ---
 
-## Project Architecture
+# UART Architecture
 
 <p align="center">
 <img src="images/UART_Block_Diagram.png" width="700">
 </p>
 
+The UART consists of
+
+- UART Transmitter (TX)
+- UART Receiver (RX)
+- Baud Rate Generator
+- Finite State Machine (FSM)
+- Control Logic
+
 ---
 
-## Simulation Results
+# ASIC Design Flow
+
+```
+RTL Design
+      │
+      ▼
+Functional Simulation (VCS)
+      │
+      ▼
+Logic Synthesis (Design Compiler)
+      │
+      ▼
+Floorplanning
+      │
+      ▼
+Power Planning
+      │
+      ▼
+Placement
+      │
+      ▼
+Clock Tree Synthesis (CTS)
+      │
+      ▼
+Routing
+      │
+      ▼
+Timing Closure
+      │
+      ▼
+Physical Verification
+      │
+      ▼
+GDSII Generation
+```
+
+---
+
+# Design Tools
+
+| Tool | Purpose |
+|-------|----------|
+| Verilog HDL | RTL Design |
+| Synopsys VCS | Functional Verification |
+| Design Compiler | Logic Synthesis |
+| IC Compiler II | Physical Design |
+| SAED 32nm | Standard Cell Library |
+
+---
+
+# Project Structure
+
+```
+Design-and-ASIC-Implementation-of-UART
+│
+├── RTL
+├── Testbench
+├── Constraints
+├── Scripts
+├── Reports
+├── images
+├── README.md
+└── LICENSE
+```
+
+---
+
+# Simulation Result
 
 <p align="center">
-<img src="images/UART_Waveform.png" width="900">
+<img src="images/waveform.png" width="900">
 </p>
 
 ---
 
-## Floorplan
+# Floorplan
 
 <p align="center">
-<img src="images/Floorplan.png" width="800">
+<img src="images/floorplan.png" width="900">
 </p>
 
 ---
 
-## Placement
+# Placement
 
 <p align="center">
-<img src="images/Placement.png" width="800">
+<img src="images/placement.png" width="900">
 </p>
 
 ---
 
-## Clock Tree Synthesis (CTS)
+# Clock Tree Synthesis (CTS)
 
 <p align="center">
-<img src="images/CTS.png" width="800">
+<img src="images/cts.png" width="900">
 </p>
 
 ---
 
-## Routing
+# Routing
 
 <p align="center">
-<img src="images/Routing.png" width="800">
+<img src="images/routing.png" width="900">
 </p>
 
 ---
 
-## Final Layout
+# Final Layout
 
 <p align="center">
-<img src="images/Layout.png" width="800">
+<img src="images/layout.png" width="900">
 </p>
 
 ---
 
-## Technology
+# Reports
 
-- Technology Node: SAED 32 nm CMOS
-- RTL Language: Verilog HDL
+The project includes
+
+- Timing Report
+- Area Report
+- Power Report
+- Utilization Report
+- Congestion Analysis
 
 ---
 
-## Author
+# Technology
 
-**Mohamed Emad**
+| Item | Value |
+|------|--------|
+| Technology | SAED 32nm CMOS |
+| RTL Language | Verilog HDL |
+| Design Methodology | RTL to GDSII |
+| Protocol | UART |
 
-ASIC Digital Design & Physical Design Engineer
+---
+
+# Future Improvements
+
+- Scan Chain Insertion
+- DFT Support
+- Formal Verification
+- Low Power Optimization
+- Multi-Corner Multi-Mode (MCMM)
+- Physical Signoff
+
+---
+
+# Author
+
+## Mohamed Emad
+
+**ASIC Digital Design & Physical Design Engineer**
+
+### Skills
 
 - RTL Design
+- Verilog HDL
+- ASIC Design Flow
 - Logic Synthesis
 - Physical Design
-- RTL to GDSII
+- Floorplanning
+- CTS
+- Routing
+- Timing Closure
+- Synopsys Design Compiler
+- Synopsys IC Compiler II
+
+---
+
+⭐ If you found this repository useful, consider giving it a star.

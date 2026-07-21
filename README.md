@@ -63,7 +63,7 @@ UART is commonly used in
 # UART Architecture
 
 <p align="center">
-<img src="images/UART_Block_Diagram.png" width="700">
+<img src="image./UART_ARCH.png" width="700">
 </p>
 
 The UART consists of

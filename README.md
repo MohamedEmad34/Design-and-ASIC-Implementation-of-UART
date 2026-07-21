@@ -7,11 +7,9 @@
 ![RTL to GDSII](https://img.shields.io/badge/Flow-RTL--to--GDSII-orange)
 ![Technology](https://img.shields.io/badge/Technology-SAED32nm-red)
 
-</p>
 <p align="center">
-
+  <img src="image/Capture.png" width="1000">
 </p>
-
 ---
 
 # Overview

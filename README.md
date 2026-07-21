@@ -8,9 +8,8 @@
 ![Technology](https://img.shields.io/badge/Technology-SAED32nm-red)
 
 </p>
-
 <p align="center">
-<img src="images/UART_Block_Diagram.png" width="900">
+
 </p>
 
 ---

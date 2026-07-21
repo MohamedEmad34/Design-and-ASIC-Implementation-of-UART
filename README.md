@@ -8,7 +8,7 @@
 ![Technology](https://img.shields.io/badge/Technology-SAED32nm-red)
 
 <p align="center">
-  <img src="./image/Capture.png" width="1000">
+  <img src="image./Capture.png" width="1000">
 </p>
 ---
 

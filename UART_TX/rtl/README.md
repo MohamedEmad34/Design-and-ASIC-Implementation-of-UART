@@ -90,8 +90,6 @@ Example:
 
 ### Test Case 1 – Transmission without Parity
 
-**Input Configuration**
-
 | Parameter | Value |
 |-----------|-------|
 | Data | 8'hA5 |
@@ -101,7 +99,32 @@ Example:
 <img src="../waveforms/no_parity_test_case.PNG" width="900">
 </p>
 
-**Figure 1.** UART transmission of `8'hA5` with parity disabled. The waveform shows the start bit, eight data bits transmitted LSB first, and the stop bit. The `BUSY` signal remains asserted throughout the transmission and returns low once the frame is complete.
+**Observation**
+
+- The transmission starts with a **Start Bit (0)**.
+- The 8-bit data (`8'hA5`) is transmitted **LSB first**.
+- Since parity is disabled, no parity bit is transmitted.
+- The frame ends with a **Stop Bit (1)**.
+- The `BUSY` signal remains asserted during transmission and is deasserted after the frame is completed.
+### Test Case 2 – Transmission with Even_parity
+
+| Parameter | Value |
+|-----------|-------|
+| Data | 8'h55 |
+| Parity | Enabled |
+
+<p align="center">
+<img src="../../waveforms/tx_no_parity.png" width="900">
+</p>
+
+**Observation**
+
+- The transmission starts with a **Start Bit (0)**.
+- The 8-bit data (`8'hA5`) is transmitted **LSB first**.
+- Since parity is disabled, no parity bit is transmitted.
+- The frame ends with a **Stop Bit (1)**.
+- The `BUSY` signal remains asserted during transmission and is deasserted after the frame is completed.
+
 ## Tools
 
 - Verilog HDL

@@ -33,8 +33,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 ## Block Diagram
 
 <p align="center">
-<img src="/uart_tx_architecture.png" width="700">
-</p>
+<img src="../../image./UART_TX_ARCHETICTURE.PNG" width="1000"></p>
 
 ---
 

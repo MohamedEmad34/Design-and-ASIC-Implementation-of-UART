@@ -1,5 +1,6 @@
 # UART Transmitter (UART TX)
 ![Language](https://img.shields.io/badge/Language-Verilog-blue) ![RTL](https://img.shields.io/badge/RTL-Design-orange) ![Simulation](https://img.shields.io/badge/Simulation-Passed-brightgreen) ![ASIC](https://img.shields.io/badge/Target-ASIC-red)
+
 A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter implemented in Verilog HDL. The design supports configurable parity generation and follows the standard UART frame format.
 
 ---

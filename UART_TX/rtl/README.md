@@ -40,8 +40,16 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 ## FSM
 
 <p align="center">
-<img src="images/tx_fsm.png" width="500">
+<img src="../../image./UART_TX_FSM.PNG" width="1000"></p>
 </p>
+
+| State  | Description                 |
+| ------ | --------------------------- |
+| IDLE   | Waits for DATA_VALID        |
+| START  | Sends Start Bit (0)         |
+| DATA   | Serializes 8-bit Data       |
+| PARITY | Sends Parity Bit (Optional) |
+| STOP   | Sends Stop Bit (1)          |
 
 ---
 

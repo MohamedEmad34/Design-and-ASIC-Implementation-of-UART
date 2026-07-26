@@ -134,7 +134,7 @@ Example:
 | Parity | Odd |
 
 <p align="center">
-<img src="../../waveforms/tx_odd_parity.png" width="900">
+<img src="../waveforms/odd_parity.png" width="900">
 </p>
 
 #### Verification Results

@@ -98,7 +98,7 @@ Example:
 | Parity | Disabled |
 
 <p align="center">
-<img src="../../waveforms/tx_no_parity.png" width="900">
+<img src="../../waveforms/no_parity_test_case.PNG" width="900">
 </p>
 
 **Figure 1.** UART transmission of `8'hA5` with parity disabled. The waveform shows the start bit, eight data bits transmitted LSB first, and the stop bit. The `BUSY` signal remains asserted throughout the transmission and returns low once the frame is complete.

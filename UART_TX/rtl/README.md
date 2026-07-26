@@ -110,21 +110,21 @@ Example:
 
 | Parameter | Value |
 |-----------|-------|
-| Data | 8'h55 |
+| Data | `8'h55` |
 | Parity | Even |
 
 <p align="center">
-<img src="../../waveforms/tx_even_parity.png" width="900">
+<img src="../waveforms/Even_parity.png" width="900">
 </p>
 
-**Observation**
+#### Verification Results
 
-- The frame starts with a **Start Bit (0)**.
-- The data (`8'h55`) is transmitted **LSB first**.
-- The generated parity bit ensures an **even number of logic '1's** across the transmitted data and parity bit.
-- The transmission is terminated with a **Stop Bit (1)**.
-- The `BUSY` signal remains high throughout the transmission.
-
+- ✔ Start bit (`0`) is generated correctly.
+- ✔ The data byte (`8'h55`) is transmitted **LSB first**.
+- ✔ Data = `8'h55` (`01010101₂`) contains **four logic '1's**.
+- ✔ The generated parity bit is `0`, preserving **even parity**.
+- ✔ The frame is terminated with a valid **Stop bit (`1`)**.
+- ✔ The `BUSY` signal remains asserted during transmission and is deasserted once the complete frame has been transmitted.
 ## Tools
 
 - Verilog HDL

@@ -1,18 +1,27 @@
 # UART Transmitter (UART TX)
+![Language](https://img.shields.io/badge/Language-Verilog-blue)
 
-A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter designed in Verilog HDL. The design supports configurable parity generation and follows the standard UART frame format.
+![RTL](https://img.shields.io/badge/RTL-Design-orange)
+
+![Simulation](https://img.shields.io/badge/Simulation-Passed-brightgreen)
+
+![ASIC](https://img.shields.io/badge/Target-ASIC-red)
+
+![License](https://img.shields.io/badge/License-MIT-green)
+
+A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter implemented in Verilog HDL. The design supports configurable parity generation and follows the standard UART frame format.
 
 ---
 
 ## Features
 
 - 8-bit parallel data transmission
-- LSB First serialization
+- LSB-first serialization
 - Configurable parity
   - Even Parity
   - Odd Parity
   - No Parity
-- Finite State Machine (FSM) Controller
+- Finite State Machine (FSM)-based controller
 - Modular RTL Design
 - Synthesizable Verilog HDL
 - Self-contained Testbench
@@ -20,7 +29,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 ---
 
 ## UART Frame Format
-
+The transmitter follows the standard UART frame format shown below.
 
 <p align="center">
 <img src="../../image./UART_FRAME_FORMAT.PNG" width="1000">
@@ -30,7 +39,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 
 ---
 
-## Block Diagram
+## UART TX Architecture
 
 <p align="center">
 <img src="../../image./UART_TX_ARCHETICTURE.PNG" width="1000"></p>
@@ -46,10 +55,10 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 | State  | Description                 |
 | ------ | --------------------------- |
 | IDLE   | Waits for DATA_VALID        |
-| START  | Sends Start Bit (0)         |
+| START  | Transmits the Start bit (0) |
 | DATA   | Serializes 8-bit Data       |
 | PARITY | Sends Parity Bit (Optional) |
-| STOP   | Sends Stop Bit (1)          |
+| STOP   | Transmits the Stop bit (1)  |
 
 ---
 
@@ -57,7 +66,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 
 | Module | Description |
 |----------|-------------|
-| UART_TX | Top module |
+| UART_TX | Top-level UART transmitter |
 | TX_FSM | Controls UART transmission sequence |
 | serializer | Converts parallel data into serial data |
 | parity_calc | Generates even/odd parity bit |
@@ -75,25 +84,7 @@ The simulation verifies the correct UART frame generation, including Start Bit, 
 | TC3  | `8'hF3` | Odd      | ✅ Pass |
 
 
-### Test Cases
-
-- No Parity
-- Even Parity
-- Odd Parity
-- Multiple Data Patterns
-
-Example:
-
-| Data | Parity |
-|------|--------|
-| A5 | Disabled |
-| 55 | Even |
-| F3 | Odd |
-| AA | Odd |
-
----
-
-## Simulation Waveform
+## Simulation Results
 
 ### Test Case 1 – Transmission without Parity
 
@@ -106,7 +97,7 @@ Example:
 <img src="../waveforms/no_parity_test_case.PNG" width="900">
 </p>
 
-**Observation**
+#### Verification Results
 
 - The transmission starts with a **Start Bit (0)**.
 - The 8-bit data (`8'hA5`) is transmitted **LSB first**.
@@ -152,6 +143,8 @@ Example:
 - ✔ The generated parity bit is `1`, resulting in an **odd number of logic '1's** across the transmitted frame.
 - ✔ The frame is terminated with a valid **Stop bit (`1`)**.
 - ✔ The `BUSY` signal remains asserted during transmission and is deasserted once the complete frame has been transmitted.
+
+  ---
   ## Simulation Summary
 
 The UART transmitter was successfully verified under the following operating conditions:
@@ -213,9 +206,18 @@ UART_TX/
 - FIFO Buffer
 - SystemVerilog Self-checking Testbench
 - Functional Coverage
+- ASIC synthesis using Synopsys Design Compiler
+- Design-and-ASIC-Implementation-of-UART
 
 ---
 
 ## Author
 
 Mohamed Emad
+
+Faculty of Engineering
+Zagazig University
+
+Electronics and Communications Engineering
+
+Digital IC Design | ASIC Physical Design | RTL Design

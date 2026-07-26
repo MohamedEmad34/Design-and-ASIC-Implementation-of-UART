@@ -21,20 +21,20 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 
 ## UART Frame Format
 
-```
 
-Idle | Start | D0 | D1 | D2 | D3 | D4 | D5 | D6 | D7 | Parity | Stop
 
-1 0 LSB First Optional 1
+<p align="center">
+<img src="images/uart_tx_architecture.png" width="700">
+</p>
 
-```
+
 
 ---
 
 ## Block Diagram
 
 <p align="center">
-<img src="images/uart_tx_architecture.png" width="700">
+<img src="/uart_tx_architecture.png" width="700">
 </p>
 
 ---

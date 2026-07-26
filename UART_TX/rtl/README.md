@@ -114,7 +114,7 @@ Example:
 | Parity | Even |
 
 <p align="center">
-<img src="../waveforms/Even_parity.png" width="900">
+<img src="../waveforms/Even_parity.PNG" width="900">
 </p>
 
 #### Verification Results

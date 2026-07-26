@@ -68,6 +68,13 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 ## Simulation
 
 The simulation verifies the correct UART frame generation, including Start Bit, Data Bits (LSB First), Optional Parity Bit, and Stop Bit.
+| Test | Data    | Parity   | Status |
+| ---- | ------- | -------- | ------ |
+| TC1  | `8'hA5` | Disabled | ✅ Pass |
+| TC2  | `8'h55` | Even     | ✅ Pass |
+| TC3  | `8'hF3` | Odd      | ✅ Pass |
+
+
 ### Test Cases
 
 - No Parity

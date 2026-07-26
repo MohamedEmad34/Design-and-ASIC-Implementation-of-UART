@@ -67,8 +67,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 
 ## Simulation
 
-The transmitter was verified using a dedicated Verilog Testbench covering different transmission scenarios.
-
+The simulation verifies the correct UART frame generation, including Start Bit, Data Bits (LSB First), Optional Parity Bit, and Stop Bit.
 ### Test Cases
 
 - No Parity
@@ -89,12 +88,20 @@ Example:
 
 ## Simulation Waveform
 
+### Test Case 1 – Transmission without Parity
+
+**Input Configuration**
+
+| Parameter | Value |
+|-----------|-------|
+| Data | 8'hA5 |
+| Parity | Disabled |
+
 <p align="center">
-<img src="waveforms/uart_tx_waveform.png" width="900">
+<img src="../../waveforms/tx_no_parity.png" width="900">
 </p>
 
----
-
+**Figure 1.** UART transmission of `8'hA5` with parity disabled. The waveform shows the start bit, eight data bits transmitted LSB first, and the stop bit. The `BUSY` signal remains asserted throughout the transmission and returns low once the frame is complete.
 ## Tools
 
 - Verilog HDL
@@ -113,14 +120,19 @@ UART_TX/
 │ ├── TX_FSM.v
 │ ├── serializer.v
 │ ├── parity_calc.v
-│ └── tx_mux.v
+│ └── mux.v
 │
 ├── tb/
 │ └── UART_TX_tb.v
 │
 ├── images/
-│ ├── uart_tx_architecture.png
-│ └── tx_fsm.png
+│ ├── SERIALIZER.png
+│ ├── TX_MUX.png
+│ ├── UART_ARCH
+│ ├── UART_FRAME_FORMAT
+│ ├──UART_SYSTEM_ARCH
+| ├── UART_SYSTEM_ARCHETICTURE
+| ├──UART_TX_FSM
 │
 ├── waveforms/
 │ └── uart_tx_waveform.png

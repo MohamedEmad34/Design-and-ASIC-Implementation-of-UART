@@ -106,24 +106,24 @@ Example:
 - Since parity is disabled, no parity bit is transmitted.
 - The frame ends with a **Stop Bit (1)**.
 - The `BUSY` signal remains asserted during transmission and is deasserted after the frame is completed.
-### Test Case 2 – Transmission with Even_parity
+### Test Case 2 – Transmission with Even Parity
 
 | Parameter | Value |
 |-----------|-------|
 | Data | 8'h55 |
-| Parity | Enabled |
+| Parity | Even |
 
 <p align="center">
-<img src="../../waveforms/tx_no_parity.png" width="900">
+<img src="../../waveforms/tx_even_parity.png" width="900">
 </p>
 
 **Observation**
 
-- The transmission starts with a **Start Bit (0)**.
-- The 8-bit data (`8'hA5`) is transmitted **LSB first**.
-- Since parity is disabled, no parity bit is transmitted.
-- The frame ends with a **Stop Bit (1)**.
-- The `BUSY` signal remains asserted during transmission and is deasserted after the frame is completed.
+- The frame starts with a **Start Bit (0)**.
+- The data (`8'h55`) is transmitted **LSB first**.
+- The generated parity bit ensures an **even number of logic '1's** across the transmitted data and parity bit.
+- The transmission is terminated with a **Stop Bit (1)**.
+- The `BUSY` signal remains high throughout the transmission.
 
 ## Tools
 

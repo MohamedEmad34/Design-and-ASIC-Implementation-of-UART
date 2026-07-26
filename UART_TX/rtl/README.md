@@ -125,6 +125,38 @@ Example:
 - ✔ The generated parity bit is `0`, preserving **even parity**.
 - ✔ The frame is terminated with a valid **Stop bit (`1`)**.
 - ✔ The `BUSY` signal remains asserted during transmission and is deasserted once the complete frame has been transmitted.
+
+### Test Case 3 – Transmission with Odd Parity
+
+| Parameter | Value |
+|-----------|-------|
+| Data | `8'hF3` |
+| Parity | Odd |
+
+<p align="center">
+<img src="../../waveforms/tx_odd_parity.png" width="900">
+</p>
+
+#### Verification Results
+
+- ✔ Start bit (`0`) is generated correctly.
+- ✔ The data byte (`8'hF3`) is transmitted **LSB first**.
+- ✔ Data = `8'hF3` (`11110011₂`) contains **six logic '1's**.
+- ✔ The generated parity bit is `1`, resulting in an **odd number of logic '1's** across the transmitted frame.
+- ✔ The frame is terminated with a valid **Stop bit (`1`)**.
+- ✔ The `BUSY` signal remains asserted during transmission and is deasserted once the complete frame has been transmitted.
+  ## Simulation Summary
+
+The UART transmitter was successfully verified under the following operating conditions:
+
+- ✔ Transmission without parity.
+- ✔ Transmission with even parity.
+- ✔ Transmission with odd parity.
+- ✔ Correct UART frame generation.
+- ✔ Correct LSB-first serialization.
+- ✔ Correct parity generation for both even and odd modes.
+- ✔ Proper `BUSY` signal operation during frame transmission.
+- ✔ Successful return to the IDLE state after the stop bit.
 ## Tools
 
 - Verilog HDL

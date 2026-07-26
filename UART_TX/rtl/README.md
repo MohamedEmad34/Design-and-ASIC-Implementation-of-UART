@@ -24,7 +24,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) Transmitter d
 
 
 <p align="center">
-<img src="images/uart_tx_architecture.png" width="700">
+<img src="image./UART_FRAME_FORMAT.PNG" width="700">
 </p>
 
 

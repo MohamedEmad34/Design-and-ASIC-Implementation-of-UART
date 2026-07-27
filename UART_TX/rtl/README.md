@@ -93,11 +93,11 @@ The simulation verifies the correct UART frame generation, including Start Bit, 
 
 #### Verification Results
 
-- The transmission starts with a **Start Bit (0)**.
-- The 8-bit data (`8'hA5`) is transmitted **LSB first**.
-- Since parity is disabled, no parity bit is transmitted.
-- The frame ends with a **Stop Bit (1)**.
-- The `BUSY` signal remains asserted during transmission and is deasserted after the frame is completed.
+- ✔ The transmission starts with a **Start Bit (0)**.
+- ✔ The 8-bit data (`8'hA5`) is transmitted **LSB first**.
+- ✔ Since parity is disabled, no parity bit is transmitted.
+- ✔ The frame ends with a **Stop Bit (1)**.
+- ✔ The `BUSY` signal remains asserted during transmission and is deasserted after the frame is completed.
 ### Test Case 2 – Transmission with Even Parity
 
 | Parameter | Value |

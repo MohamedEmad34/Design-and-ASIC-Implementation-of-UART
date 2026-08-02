@@ -9,16 +9,22 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter i
 
 ## Features
 
-- 8-bit parallel data transmission
-- LSB-first serialization
-- Configurable parity
-  - Even Parity
-  - Odd Parity
-  - No Parity
-- Finite State Machine (FSM)-based controller
-- Modular RTL Design
-- Synthesizable Verilog HDL
-- Self-contained Testbench
+• 8-bit Parallel-to-Serial Transmission
+
+• LSB-First Transmission
+
+• Configurable Parity
+    • No Parity
+    • Even Parity
+    • Odd Parity
+
+• UART Frame Generation
+
+• Busy Status Indication
+
+• Modular RTL Architecture
+
+• Fully Synthesizable Verilog HDL
 
 ---
 
@@ -36,6 +42,7 @@ The transmitter consists of the following modules:
 | Serializer | Converts parallel data into serial data. |
 | Parity Calculator | Generates even or odd parity. |
 | Multiplexer | Selects the transmitted bit (Start, Data, Parity, Stop). |
+The transmitter is implemented using four independent RTL modules coordinated by a finite state machine (FSM), providing a modular and reusable architecture.
 ---
 
 ## RTL Hierarchy

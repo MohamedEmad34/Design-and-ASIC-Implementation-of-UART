@@ -25,7 +25,7 @@ The UART Receiver (UART_RX) reconstructs serial UART frames into 8-bit parallel 
 ## UART_RX Architecture
 
 <p align="center">
-    <img src="../../images/UART_RX/UART_RX_ِARCH.PNG" width="900">
+    <img src="../../images/UART_RX/UART_RX_ARCH.PNG" width="900">
 </p>
 
 The receiver consists of several independent RTL modules coordinated by a finite state machine to ensure reliable UART reception.

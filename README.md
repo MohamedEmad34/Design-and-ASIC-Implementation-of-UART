@@ -118,48 +118,29 @@ Detailed documentation for each module is available below:
 - 📄 **UART Transmitter** → `docs/UART_TX/README.md`
 - 📄 **UART Receiver** → `docs/UART_RX/README.md`
 - 📄 **UART Top Integration** → `docs/UART_TOP/README.md`
-## Verification
+## Verification Summary
 
-The design was verified with directed, self-checking testbenches covering:
+The UART design was verified using self-checking Verilog testbenches to ensure correct functionality under normal and error conditions.
 
-| Test Case              | Status |
-| ---------------------- | ------ |
-| No Parity              | ✅      |
-| Even Parity            | ✅      |
-| Odd Parity             | ✅      |
-| Parity Error           | ✅      |
-| Framing Error          | ✅      |
-| Parity + Framing Error | ✅      |
-| TX/RX Integration      | ✅      |
+The following verification scenarios were successfully validated:
 
----
+| Test Case | UART TX | UART RX | UART TOP |
+|-----------|:-------:|:-------:|:--------:|
+| No Parity Frame | ✅ | ✅ | ✅ |
+| Even Parity Frame | ✅ | ✅ | ✅ |
+| Odd Parity Frame | ✅ | ✅ | ✅ |
+| Parity Error Detection | — | ✅ | — |
+| Framing Error Detection | — | ✅ | — |
+| Parity + Framing Error | — | ✅ | — |
+| End-to-End Communication | — | — | ✅ |
 
-## Verification Results
+### UART Top-Level Verification
 
-### UART Top
+The following waveform demonstrates successful end-to-end UART communication between the transmitter and receiver.
 
 <p align="center">
-<img src="./images/UART_TOP/no_parity_test_case.PNG" width="900">
+    <img src="./images/UART_TOP/no_parity_test_case.png" width="950">
 </p>
-
-### UART Receiver
-<p align="center">
-<img src="./images/UART_RX/no_parity_test_case_RX.PNG" width="900">
-</p>
-
-### UART Transmitter
-<p align="center">
-<img src="./images/UART_TX/no_parity_test_case.PNG" width="900">
-</p>
-
-## Design Notes & Fixes
-
-A few subtle timing bugs were found and fixed during bring-up, worth keeping in mind if you extend this design:
-
-- **RX bit-count offset:** the same counter is used to time the start bit and the data bits, so the data-bit counter does not start at zero when `DATA` state begins. The exit condition for the `DATA` state accounts for this one-bit offset.
-- **TX baud generation:** the transmit FSM needs its own `Prescale`-driven tick to pace state transitions and shifts; without it, the transmitter finishes a frame far faster than the receiver samples it.
-- **Sticky error flags:** `PARITY_ERROR` and `FRAMING_ERROR` are cleared only at the start of a new frame, not on every cycle their enable is low — otherwise each flag is only valid for a single clock cycle and can be missed.
-
 ---
 
 ## Current Progress

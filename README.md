@@ -122,17 +122,21 @@ The design was verified with directed, self-checking testbenches covering:
 
 ---
 
-## How to Simulate
+## Verification Results
 
-1. Open **Vivado** and create a new project (or add sources to an existing one).
-2. Add all files under `rtl/` as design sources.
-3. Add the relevant testbench under `tb/` as a simulation-only source.
-4. Set the testbench as the top module for simulation.
-5. Run behavioral simulation and open the waveform viewer.
-6. Add `RX_P_DATA`, `RX_DATA_VALID`, `PARITY_ERROR`, and `FRAMING_ERROR` to the waveform to confirm the received byte matches what was transmitted.
+### UART Top
 
-> **Tip:** if you extend the testbench's stimulus, remember to also extend its run time (e.g. `#2000` instead of `#200`) — otherwise the waveform may simply be cut off before the frame finishes, which can look like a bug that isn't actually there.
+<p align="center">
+<img src="./UART_TOP_Waveform.png" width="900">
+</p>
 
+### UART Receiver
+
+...
+
+### UART Transmitter
+
+...
 ---
 
 ## Design Notes & Fixes

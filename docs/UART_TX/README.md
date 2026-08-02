@@ -78,7 +78,7 @@ The simulation verifies the correct UART frame generation, including Start Bit, 
 | Parity | Disabled |
 
 <p align="center">
-<img src="../waveforms/no_parity_test_case.PNG" width="900">
+<img src="../../images/UART_TX/no_parity_test_case.PNG" width="900">
 </p>
 
 #### Verification Results
@@ -96,7 +96,7 @@ The simulation verifies the correct UART frame generation, including Start Bit, 
 | Parity | Even |
 
 <p align="center">
-<img src="../waveforms/Even_parity.PNG" width="900">
+<img src="../../images/UART_TX/Even_parity.PNG" width="900">
 </p>
 
 #### Verification Results
@@ -116,7 +116,7 @@ The simulation verifies the correct UART frame generation, including Start Bit, 
 | Parity | Odd |
 
 <p align="center">
-<img src="../waveforms/odd_parity.PNG" width="900">
+<img src="../../images/UART_TX/odd_parity.PNG" width="900">
 </p>
 
 #### Verification Results

@@ -22,21 +22,11 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter i
 
 ---
 
-## UART Frame Format
-The transmitter follows the standard UART frame format shown below.
-
-<p align="center">
-<img src="../images/UART_FRAME_FORMAT.PNG" width="1000">
-</p>
-
-
-
----
 
 ## UART TX Architecture
 
 <p align="center">
-<img src="../../image./UART_TX_ARCHETICTURE.PNG" width="1000"></p>
+<img src="../../UART_TX/images/UART_TX_ARCHETICTURE.PNG" width="1000"></p>
 
 ---
 

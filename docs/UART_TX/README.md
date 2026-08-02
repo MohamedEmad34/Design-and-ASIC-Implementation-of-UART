@@ -28,8 +28,26 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter i
 <p align="center">
 <img src="../../images/UART_TX/UART_TX_ARCHETICTURE.PNG" width="1000"></p>
 
+The transmitter consists of the following modules:
+
+| Module | Function |
+|----------|----------|
+| TX_FSM | Controls the complete transmission sequence. |
+| Serializer | Converts parallel data into serial data. |
+| Parity Calculator | Generates even or odd parity. |
+| Multiplexer | Selects the transmitted bit (Start, Data, Parity, Stop). |
 ---
 
+## RTL Hierarchy
+
+```
+UART_TX
+│
+├── TX_FSM
+├── Serializer
+├── Parity Calculator
+└── Multiplexer
+```
 ## FSM
 
 <p align="center">
@@ -43,18 +61,6 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter i
 | DATA   | Serializes 8-bit Data       |
 | PARITY | Sends Parity Bit (Optional) |
 | STOP   | Transmits the Stop bit (1)  |
-
----
-
-## RTL Modules
-
-| Module | Description |
-|----------|-------------|
-| UART_TX | Top-level UART transmitter |
-| TX_FSM | Controls UART transmission sequence |
-| serializer | Converts parallel data into serial data |
-| parity_calc | Generates even/odd parity bit |
-| tx_mux | Selects Start, Data, Parity or Stop bit |
 
 ---
 

@@ -219,9 +219,10 @@ A few subtle timing bugs were found and fixed during bring-up, worth keeping in 
 
 ## Author
 
-**[Your Name]**
-Digital Design Engineer
+Mohamed Emad
 
----
+Faculty of Engineering, Zagazig University
 
-⭐ If you found this repository useful, consider giving it a star.
+Electronics and Communications Engineering
+
+Digital ASIC Design & Verification Engineer

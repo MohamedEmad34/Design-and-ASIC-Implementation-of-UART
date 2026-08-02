@@ -104,11 +104,11 @@ Design-and-ASIC-Implementation-of-UART
 
 ## Project Modules
 
-| Module | Description |
-|----------|-------------|
-| **UART_TX** | Implements the UART transmitter responsible for converting 8-bit parallel data into serial frames. |
-| **UART_RX** | Implements the UART receiver with oversampling, majority voting, parity checking, and framing error detection. |
-| **UART_TOP** | Integrates the UART transmitter and receiver into a complete communication system for end-to-end verification. |
+| Module              | Documentation                                |
+| ------------------- | -------------------------------------------- |
+| 🚀 UART Transmitter | [`docs/UART_TX`](./docs/UART_TX/README.md)   |
+| 📥 UART Receiver    | [`docs/UART_RX`](./docs/UART_RX/README.md)   |
+| 🔗 UART Top         | [`docs/UART_TOP`](./docs/UART_TOP/README.md) |
 
 ---
 ## Documentation

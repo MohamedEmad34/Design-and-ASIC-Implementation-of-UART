@@ -120,7 +120,7 @@ Detailed documentation for each module is available below:
 - 📄 **UART Top Integration** → `docs/UART_TOP/README.md`
 ## Verification Summary
 
-The UART design was verified using self-checking Verilog testbenches to ensure correct functionality under normal and error conditions.
+The UART transmitter, receiver, and integrated top-level design were verified using dedicated Verilog testbenches covering normal operation and error scenarios.
 
 The following verification scenarios were successfully validated:
 

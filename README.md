@@ -8,7 +8,7 @@
 ![Technology](https://img.shields.io/badge/Technology-SAED32nm-red)
 
 <p align="center">
-  <img src="image./Capture.PNG" width="1000">
+  <img src="./images/UART_TOP/Capture.PNG" width="1000">
 </p>
 ---
 

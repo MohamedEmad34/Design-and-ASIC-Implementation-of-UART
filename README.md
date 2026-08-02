@@ -127,18 +127,16 @@ The design was verified with directed, self-checking testbenches covering:
 ### UART Top
 
 <p align="center">
-<img src="./UART_TOP_Waveform.png" width="900">
+<img src="./images/UART_TOP/no_parity_test_case.PNG" width="900">
 </p>
 
 ### UART Receiver
 
-...
 
 ### UART Transmitter
-
-...
----
-
+<p align="center">
+<img src="./images/UART_TX/no_parity_test_case.PNG" width="900">
+</p>
 ## Design Notes & Fixes
 
 A few subtle timing bugs were found and fixed during bring-up, worth keeping in mind if you extend this design:

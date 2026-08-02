@@ -88,7 +88,7 @@ The receiver is controlled by a finite state machine consisting of the following
 | ERROR_CHK | Reports parity and framing errors and asserts Data Valid. |
 
 <p align="center">
-    <img src="../../images/UART_RX/UART_RX_FSM.png" width="750">
+    <img src="../../images/UART_RX/UART_RX_FSM.PNG" width="750">
 </p>
 
 ---

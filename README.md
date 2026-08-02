@@ -150,15 +150,15 @@ A few subtle timing bugs were found and fixed during bring-up, worth keeping in 
 
 ---
 
-## Roadmap
+## Current Progress
 
-- [x] RTL design
-- [x] Functional verification (directed testbenches, Vivado)
-- [ ] Logic synthesis
-- [ ] Floorplanning & power planning
-- [ ] Placement & Clock Tree Synthesis (CTS)
-- [ ] Routing & timing closure
-- [ ] Physical verification & GDSII generation
+| Phase            | Status |
+| ---------------- | ------ |
+| RTL Design       | ✅      |
+| Verification     | ✅      |
+| UART Integration | ✅      |
+| ASIC Flow        | 🚧     |
+
 
 ---
 

@@ -33,7 +33,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter i
 ## FSM
 
 <p align="center">
-<img src="../../image./UART_TX_FSM.PNG" width="1000"></p>
+<img src="../../images/UART_TX/UART_TX_FSM.PNG" width="1000"></p>
 </p>
 
 | State  | Description                 |

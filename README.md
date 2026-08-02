@@ -131,7 +131,9 @@ The design was verified with directed, self-checking testbenches covering:
 </p>
 
 ### UART Receiver
-
+<p align="center">
+<img src="./images/UART_RX/no_parity_test_case_RX.PNG" width="900">
+</p>
 
 ### UART Transmitter
 <p align="center">

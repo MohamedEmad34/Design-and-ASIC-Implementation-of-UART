@@ -1,249 +1,221 @@
-# UART ASIC RTL-to-GDSII Implementation
-
-<p align="center">
+# UART Design & Verification in Verilog
 
 ![Verilog](https://img.shields.io/badge/Language-Verilog-blue)
-![Synopsys](https://img.shields.io/badge/EDA-Synopsys-success)
-![RTL to GDSII](https://img.shields.io/badge/Flow-RTL--to--GDSII-orange)
-![Technology](https://img.shields.io/badge/Technology-SAED32nm-red)
+![Status](https://img.shields.io/badge/Stage-RTL%20%2B%20Verification-brightgreen)
+![Simulator](https://img.shields.io/badge/Simulator-Xilinx%20Vivado-orange)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 <p align="center">
   <img src="./images/UART_TOP/Capture.PNG" width="1000">
 </p>
 ---
 
-# Overview
+## Overview
 
-This repository demonstrates the complete ASIC implementation flow of a **Universal Asynchronous Receiver/Transmitter (UART)** from **RTL to GDSII**.
+This repository contains a fully synchronous **UART (Universal Asynchronous Receiver/Transmitter)** designed from scratch in Verilog HDL, and functionally verified through directed testbenches in **Xilinx Vivado**.
 
-The design is implemented using **Verilog HDL**, functionally verified with **Synopsys VCS**, synthesized using **Synopsys Design Compiler**, and physically implemented using **Synopsys IC Compiler II (ICC2)** targeting the **SAED 32nm CMOS Standard Cell Library**.
-
-The project follows a complete industrial ASIC design methodology including RTL design, synthesis, floorplanning, placement, CTS, routing, timing closure, and physical verification.
+The design supports a configurable baud rate (via a `Prescale` divider), optional even/odd parity, and dedicated framing/parity error detection on the receive side. The project currently covers the **RTL design and functional verification** stages, with synthesis and physical implementation planned as the next phase of the flow.
 
 ---
 
-# Table of Contents
+## Table of Contents
 
-- Overview
-- UART Architecture
-- ASIC Design Flow
-- Design Tools
-- Project Structure
-- Simulation Results
-- Floorplan
-- Placement
-- Clock Tree Synthesis
-- Routing
-- Final Layout
-- Reports
-- Technology
-- Author
+- [Features](#features)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Module Description](#module-description)
+- [Verification](#verification)
+- [How to Simulate](#how-to-simulate)
+- [Design Notes & Fixes](#design-notes--fixes)
+- [Roadmap](#roadmap)
+- [Tools](#tools)
+- [Author](#author)
 
 ---
 
-# UART Overview
+## Features
 
-UART (Universal Asynchronous Receiver/Transmitter) is one of the most widely used asynchronous serial communication protocols.
-
-It enables communication between two digital devices using only two wires:
-
-- TX (Transmit)
-- RX (Receive)
-
-UART is commonly used in
-
-- Embedded Systems
-- ASIC Design
-- FPGA Design
-- Microcontrollers
-- SoCs
+- Configurable data width (default **8 bits**) via a Verilog `parameter`.
+- Configurable baud rate through a 6-bit `Prescale` input, shared between TX and RX so both sides stay in lock-step.
+- Optional parity generation/checking, switchable between **even** and **odd**.
+- Independent **`PARITY_ERROR`** and **`FRAMING_ERROR`** status flags on the receive path.
+- Noise-tolerant reception: each bit is sampled **3 times around the bit center** and resolved by majority vote instead of a single sample point.
+- Fully synchronous design, single clock domain, active-low asynchronous reset.
+- Clean separation of concerns: every protocol stage (start/data/parity/stop) has its own small, testable module.
 
 ---
 
-# UART Architecture
+## Architecture
+
 
 <p align="center">
 <img src="./images/UART_TOP/UART_ARCH.png" width="1000">
 </p>
 
-The UART consists of
+**Transmit path:** `TX_FSM` (baud-tick driven) → `serializer` (parallel→serial shift register) → `parity_calc` → `mux` (selects start/data/parity/stop bit onto `TX_OUT`).
 
-- UART Transmitter (TX)
-- UART Receiver (RX)
-- Baud Rate Generator
-- Finite State Machine (FSM)
-- Control Logic
+**Receive path:** `uart_rx_fsm` (baud-tick driven via `edge_bit_counter`) → `data_sampling` (3-sample majority vote) → `deserializer` (serial→parallel) → `start_check` / `parity_check` / `stop_check` (glitch, parity, and framing validation).
+
+Both TX and RX divide the same system clock by `Prescale` internally, so a single shared value keeps transmitter and receiver bit timing aligned.
 
 ---
 
-# ASIC Design Flow
-
-```
-RTL Design
-      │
-      ▼
-Functional Simulation (VCS)
-      │
-      ▼
-Logic Synthesis (Design Compiler)
-      │
-      ▼
-Floorplanning
-      │
-      ▼
-Power Planning
-      │
-      ▼
-Placement
-      │
-      ▼
-Clock Tree Synthesis (CTS)
-      │
-      ▼
-Routing
-      │
-      ▼
-Timing Closure
-      │
-      ▼
-Physical Verification
-      │
-      ▼
-GDSII Generation
-```
-
----
-
-# Design Tools
-
-| Tool | Purpose |
-|-------|----------|
-| Verilog HDL | RTL Design |
-| Synopsys VCS | Functional Verification |
-| Design Compiler | Logic Synthesis |
-| IC Compiler II | Physical Design |
-| SAED 32nm | Standard Cell Library |
-
----
-
-# Project Structure
+## Project Structure
 
 ```
 Design-and-ASIC-Implementation-of-UART
 │
 ├── RTL
-├── Testbench
-├── Constraints
-├── Scripts
-├── Reports
-├── images
-├── README.md
-└── LICENSE
+│   ├── UART_TX
+│   ├── UART_RX
+│   └── UART_TOP
+│
+├── Verification
+│   ├── UART_TX_tb
+│   ├── UART_RX_tb
+│   └── UART_TOP_tb
+│
+├── Images
+│   ├── UART_TX
+│   ├── UART_RX
+│   └── UART_TOP
+│
+└── README.md
 ```
 
 ---
 
-# Simulation Result
+## Module Description
 
-<p align="center">
-<img src="images/waveform.png" width="900">
-</p>
+| Module | Role |
+|---|---|
+| `UART_TOP.v` | Integrates `UART_TX` and `UART_RX`, exposes a single external interface (data, control, `Prescale`, status flags). |
+| `UART_TX.v` | Transmit top module: wires `TX_FSM`, `serializer`, `parity_calc`, and `mux` together. |
+| `TX_FSM.v` | Drives the TX protocol states and contains the baud-rate tick generator that paces one bit every `Prescale` clock cycles. |
+| `serializer.v` | Shifts the parallel input byte out one bit at a time, LSB first. |
+| `mux.v` | Selects which signal (start bit, data bit, parity bit, stop bit) drives `TX_OUT` based on the current TX state. |
+| `UART_RX.v` | Receive top module: wires `uart_rx_fsm`, `edge_bit_counter`, `data_sampling`, `deserializer`, and the three checker modules together. |
+| `uart_rx_fsm.v` | Drives the RX protocol states (`IDLE → START → DATA → PARITY → STOP → ERROR_CHK`) and generates all internal enable strobes. |
+| `edge_bit_counter.v` | Divides the system clock by `Prescale` to produce per-bit timing, and tracks which data bit is currently being received. |
+| `data_sampling.v` | Samples the incoming line three times around the center of each bit and takes a majority vote, for noise immunity. |
+| `deserializer.v` | Shifts sampled bits into the received data register. |
+| `start_check.v` | Confirms the start bit is still low mid-bit, to reject glitches. |
+| `parity_calc.v` | Computes the expected parity (even/odd) for the byte being transmitted. |
+| `parity_check.v` | Compares the received parity bit against the expected value and flags `PARITY_ERROR`. |
+| `stop_check.v` | Confirms the stop bit is high and flags `FRAMING_ERROR` if not. |
+
+---
+##
+## Verification
+
+The design was verified with directed, self-checking testbenches covering:
+
+| Test Case              | Status |
+| ---------------------- | ------ |
+| No Parity              | ✅      |
+| Even Parity            | ✅      |
+| Odd Parity             | ✅      |
+| Parity Error           | ✅      |
+| Framing Error          | ✅      |
+| Parity + Framing Error | ✅      |
+| TX/RX Integration      | ✅      |
 
 ---
 
-# Floorplan
+## How to Simulate
 
-<p align="center">
-<img src="images/floorplan.png" width="900">
-</p>
+1. Open **Vivado** and create a new project (or add sources to an existing one).
+2. Add all files under `rtl/` as design sources.
+3. Add the relevant testbench under `tb/` as a simulation-only source.
+4. Set the testbench as the top module for simulation.
+5. Run behavioral simulation and open the waveform viewer.
+6. Add `RX_P_DATA`, `RX_DATA_VALID`, `PARITY_ERROR`, and `FRAMING_ERROR` to the waveform to confirm the received byte matches what was transmitted.
 
----
-
-# Placement
-
-<p align="center">
-<img src="images/placement.png" width="900">
-</p>
+> **Tip:** if you extend the testbench's stimulus, remember to also extend its run time (e.g. `#2000` instead of `#200`) — otherwise the waveform may simply be cut off before the frame finishes, which can look like a bug that isn't actually there.
 
 ---
 
-# Clock Tree Synthesis (CTS)
+## Design Notes & Fixes
 
-<p align="center">
-<img src="images/cts.png" width="900">
-</p>
+A few subtle timing bugs were found and fixed during bring-up, worth keeping in mind if you extend this design:
 
----
-
-# Routing
-
-<p align="center">
-<img src="images/routing.png" width="900">
-</p>
+- **RX bit-count offset:** the same counter is used to time the start bit and the data bits, so the data-bit counter does not start at zero when `DATA` state begins. The exit condition for the `DATA` state accounts for this one-bit offset.
+- **TX baud generation:** the transmit FSM needs its own `Prescale`-driven tick to pace state transitions and shifts; without it, the transmitter finishes a frame far faster than the receiver samples it.
+- **Sticky error flags:** `PARITY_ERROR` and `FRAMING_ERROR` are cleared only at the start of a new frame, not on every cycle their enable is low — otherwise each flag is only valid for a single clock cycle and can be missed.
 
 ---
 
-# Final Layout
+## Roadmap
 
-<p align="center">
-<img src="images/layout.png" width="900">
-</p>
-
----
-
-# Reports
-
-The project includes
-
-- Timing Report
-- Area Report
-- Power Report
-- Utilization Report
-- Congestion Analysis
+- [x] RTL design
+- [x] Functional verification (directed testbenches, Vivado)
+- [ ] Logic synthesis
+- [ ] Floorplanning & power planning
+- [ ] Placement & Clock Tree Synthesis (CTS)
+- [ ] Routing & timing closure
+- [ ] Physical verification & GDSII generation
 
 ---
 
-# Technology
+## Physical Implementation
 
-| Item | Value |
-|------|--------|
-| Technology | SAED 32nm CMOS |
-| RTL Language | Verilog HDL |
-| Design Methodology | RTL to GDSII |
-| Protocol | UART |
+> This section will be filled in as each stage of the ASIC flow is completed. Placeholders below are ready for screenshots, reports, and metrics.
+
+### Synthesis
+- Status: ⏳ Not started
+- Tool:
+- Area report:
+- Timing summary (setup/hold slack):
+- Gate-level netlist: `syn/netlist.v` *(to be added)*
+
+### Floorplanning
+- Status: ⏳ Not started
+- Die/core size:
+- Aspect ratio / utilization:
+- I/O pin placement:
+- Floorplan screenshot: `docs/floorplan.png` *(to be added)*
+
+### Power Planning
+- Status: ⏳ Not started
+- Power ring / stripe configuration:
+- IR drop analysis:
+
+### Placement
+- Status: ⏳ Not started
+- Placement density:
+- Congestion map: `docs/placement.png` *(to be added)*
+
+### Clock Tree Synthesis (CTS)
+- Status: ⏳ Not started
+- Clock skew:
+- Clock latency:
+
+### Routing & Timing Closure
+- Status: ⏳ Not started
+- DRC/LVS clean: 
+- Final timing signoff (WNS/TNS):
+- Routed layout screenshot: `docs/routing.png` *(to be added)*
+
+### GDSII
+- Status: ⏳ Not started
+- Final GDS file: `gds/uart.gds` *(to be added)*
+- Chip micrograph (if fabricated):
 
 ---
 
-# Future Improvements
+## Tools
 
-- Scan Chain Insertion
-- DFT Support
-- Formal Verification
-- Low Power Optimization
-- Multi-Corner Multi-Mode (MCMM)
-- Physical Signoff
+| Tool | Purpose |
+|---|---|
+| Verilog HDL | RTL design |
+| Xilinx Vivado | Functional simulation & waveform debug |
 
 ---
 
-# Author
+## Author
 
-## Mohamed Emad
-
-**ASIC Digital Design & Physical Design Engineer**
-
-### Skills
-
-- RTL Design
-- Verilog HDL
-- ASIC Design Flow
-- Logic Synthesis
-- Physical Design
-- Floorplanning
-- CTS
-- Routing
-- Timing Closure
-- Synopsys Design Compiler
-- Synopsys IC Compiler II
+**[Your Name]**
+Digital Design Engineer
 
 ---
 

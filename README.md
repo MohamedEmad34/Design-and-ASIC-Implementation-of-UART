@@ -139,7 +139,7 @@ The following verification scenarios were successfully validated:
 The following waveform demonstrates successful end-to-end UART communication between the transmitter and receiver.
 
 <p align="center">
-    <img src="./images/UART_TOP/no_parity_test_case.png" width="950">
+    <img src="./images/UART_TOP/no_parity_test_case.PNG" width="950">
 </p>
 ---
 
@@ -212,10 +212,13 @@ The following waveform demonstrates successful end-to-end UART communication bet
 
 ## Author
 
-Mohamed Emad
+**Mohamed Emad**
 
 Faculty of Engineering, Zagazig University
 
 Electronics and Communications Engineering
 
 Digital ASIC Design & Verification Engineer
+
+- GitHub: https://github.com/MohamedEmad34
+- LinkedIn: www.linkedin.com/in/mohamed-emad-578039241

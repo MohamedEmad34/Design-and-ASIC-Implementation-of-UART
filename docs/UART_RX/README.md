@@ -67,7 +67,13 @@ The UART receiver operates using configurable oversampling.
 Each received bit is sampled multiple times according to the selected prescale value. Three samples around the center of each bit are collected, and the majority voting circuit determines the final logic value, improving noise immunity and communication reliability.
 
 ---
+## Receiver Data Path
 
+The following diagram illustrates the complete data flow inside the UART receiver, from the incoming serial bit stream to the recovered parallel data and error detection outputs.
+
+<p align="center">
+    <img src="../../images/UART_RX/UART_RX_DATA_PATH.PNG" width="900">
+</p>
 ## Finite State Machine
 
 The receiver is controlled by a finite state machine consisting of the following states:

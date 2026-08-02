@@ -26,7 +26,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter i
 The transmitter follows the standard UART frame format shown below.
 
 <p align="center">
-<img src="../../image./UART_FRAME_FORMAT.PNG" width="1000">
+<img src="../../images/UART_FRAME_FORMAT.PNG" width="1000">
 </p>
 
 

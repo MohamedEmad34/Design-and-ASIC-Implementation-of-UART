@@ -1,4 +1,4 @@
-# UART Design & Verification in Verilog
+# Design and ASIC Implementation of UART
 
 ![Verilog](https://img.shields.io/badge/Language-Verilog-blue)
 ![Status](https://img.shields.io/badge/Stage-RTL%20%2B%20Verification-brightgreen)

@@ -12,9 +12,7 @@
 
 ## Overview
 
-This repository contains a fully synchronous **UART (Universal Asynchronous Receiver/Transmitter)** designed from scratch in Verilog HDL, and functionally verified through directed testbenches in **Xilinx Vivado**.
-
-The design supports a configurable baud rate (via a `Prescale` divider), optional even/odd parity, and dedicated framing/parity error detection on the receive side. The project currently covers the **RTL design and functional verification** stages, with synthesis and physical implementation planned as the next phase of the flow.
+This repository presents the complete RTL design and verification of a Universal Asynchronous Receiver/Transmitter (UART) implemented in Verilog HDL. The project includes independently designed UART Transmitter (TX) and Receiver (RX) modules, integrated into a complete UART communication system, with the ASIC implementation currently in progress.
 
 ---
 
@@ -35,13 +33,24 @@ The design supports a configurable baud rate (via a `Prescale` divider), optiona
 
 ## Features
 
-- Configurable data width (default **8 bits**) via a Verilog `parameter`.
-- Configurable baud rate through a 6-bit `Prescale` input, shared between TX and RX so both sides stay in lock-step.
-- Optional parity generation/checking, switchable between **even** and **odd**.
-- Independent **`PARITY_ERROR`** and **`FRAMING_ERROR`** status flags on the receive path.
-- Noise-tolerant reception: each bit is sampled **3 times around the bit center** and resolved by majority vote instead of a single sample point.
-- Fully synchronous design, single clock domain, active-low asynchronous reset.
-- Clean separation of concerns: every protocol stage (start/data/parity/stop) has its own small, testable module.
+Communication
+-------------
+✔ 8-bit UART
+✔ Configurable Prescale
+✔ LSB First
+
+Reliability
+-----------
+✔ Oversampling
+✔ Majority Voting
+✔ Parity Check
+✔ Framing Check
+
+Design
+------
+✔ Modular RTL
+✔ Independent TX/RX
+✔ UART TOP
 
 ---
 
@@ -85,27 +94,22 @@ Design-and-ASIC-Implementation-of-UART
 
 ---
 
-## Module Description
+## Project Modules
 
-| Module | Role |
-|---|---|
-| `UART_TOP.v` | Integrates `UART_TX` and `UART_RX`, exposes a single external interface (data, control, `Prescale`, status flags). |
-| `UART_TX.v` | Transmit top module: wires `TX_FSM`, `serializer`, `parity_calc`, and `mux` together. |
-| `TX_FSM.v` | Drives the TX protocol states and contains the baud-rate tick generator that paces one bit every `Prescale` clock cycles. |
-| `serializer.v` | Shifts the parallel input byte out one bit at a time, LSB first. |
-| `mux.v` | Selects which signal (start bit, data bit, parity bit, stop bit) drives `TX_OUT` based on the current TX state. |
-| `UART_RX.v` | Receive top module: wires `uart_rx_fsm`, `edge_bit_counter`, `data_sampling`, `deserializer`, and the three checker modules together. |
-| `uart_rx_fsm.v` | Drives the RX protocol states (`IDLE → START → DATA → PARITY → STOP → ERROR_CHK`) and generates all internal enable strobes. |
-| `edge_bit_counter.v` | Divides the system clock by `Prescale` to produce per-bit timing, and tracks which data bit is currently being received. |
-| `data_sampling.v` | Samples the incoming line three times around the center of each bit and takes a majority vote, for noise immunity. |
-| `deserializer.v` | Shifts sampled bits into the received data register. |
-| `start_check.v` | Confirms the start bit is still low mid-bit, to reject glitches. |
-| `parity_calc.v` | Computes the expected parity (even/odd) for the byte being transmitted. |
-| `parity_check.v` | Compares the received parity bit against the expected value and flags `PARITY_ERROR`. |
-| `stop_check.v` | Confirms the stop bit is high and flags `FRAMING_ERROR` if not. |
+| Module | Description |
+|----------|-------------|
+| **UART_TX** | Implements the UART transmitter responsible for converting 8-bit parallel data into serial frames. |
+| **UART_RX** | Implements the UART receiver with oversampling, majority voting, parity checking, and framing error detection. |
+| **UART_TOP** | Integrates the UART transmitter and receiver into a complete communication system for end-to-end verification. |
 
 ---
-##
+## Documentation
+
+Detailed documentation for each module is available below:
+
+- 📄 **UART Transmitter** → `docs/UART_TX/README.md`
+- 📄 **UART Receiver** → `docs/UART_RX/README.md`
+- 📄 **UART Top Integration** → `docs/UART_TOP/README.md`
 ## Verification
 
 The design was verified with directed, self-checking testbenches covering:

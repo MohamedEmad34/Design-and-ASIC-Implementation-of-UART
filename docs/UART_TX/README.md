@@ -26,7 +26,7 @@ A synthesizable UART (Universal Asynchronous Receiver/Transmitter) transmitter i
 ## UART TX Architecture
 
 <p align="center">
-<img src="../../UART_TX/images/UART_TX_ARCHETICTURE.PNG" width="1000"></p>
+<img src="../../images/UART_TX/UART_TX_ARCHETICTURE.PNG" width="1000"></p>
 
 ---
 

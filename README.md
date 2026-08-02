@@ -74,20 +74,28 @@ Both TX and RX divide the same system clock by `Prescale` internally, so a singl
 ```
 Design-and-ASIC-Implementation-of-UART
 │
-├── RTL
-│   ├── UART_TX
-│   ├── UART_RX
-│   └── UART_TOP
+├── RTL/
+│   ├── UART_TX/
+│   ├── UART_RX/
+│   └── UART_TOP/
 │
-├── Verification
-│   ├── UART_TX_tb
-│   ├── UART_RX_tb
-│   └── UART_TOP_tb
+├── Verification/
 │
-├── Images
-│   ├── UART_TX
-│   ├── UART_RX
-│   └── UART_TOP
+├── docs/
+│   ├── UART_TX/
+│   │     └── README.md
+│   │
+│   ├── UART_RX/
+│   │     └── README.md
+│   │
+│   └── UART_TOP/
+│         └── README.md
+│
+├── images/
+│   ├── UART_TX/
+│   ├── UART_RX/
+│   ├── UART_TOP/
+│   └── ASIC/
 │
 └── README.md
 ```

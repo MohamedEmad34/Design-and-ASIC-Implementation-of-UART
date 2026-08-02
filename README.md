@@ -139,6 +139,7 @@ The design was verified with directed, self-checking testbenches covering:
 <p align="center">
 <img src="./images/UART_TX/no_parity_test_case.PNG" width="900">
 </p>
+
 ## Design Notes & Fixes
 
 A few subtle timing bugs were found and fixed during bring-up, worth keeping in mind if you extend this design:

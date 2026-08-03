@@ -67,6 +67,15 @@ The UART receiver operates using configurable oversampling.
 Each received bit is sampled multiple times according to the selected prescale value. Three samples around the center of each bit are collected, and the majority voting circuit determines the final logic value, improving noise immunity and communication reliability.
 
 ---
+## Oversampling
+
+The receiver supports configurable oversampling through the **Prescale** input.
+
+Oversampling improves communication reliability by sampling each received bit multiple times. Three samples are collected around the center of every bit period, and the Majority Voting block determines the final bit value.
+
+This technique significantly improves immunity against glitches and timing jitter.
+
+---
 ## Receiver Data Path
 
 The following diagram illustrates the complete data flow inside the UART receiver, from the incoming serial bit stream to the recovered parallel data and error detection outputs.

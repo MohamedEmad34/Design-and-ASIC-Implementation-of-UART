@@ -97,7 +97,7 @@ The following test scenarios were successfully verified:
 ### Complete UART Communication
 
 <p align="center">
-    <img src="../../images/UART_TOP/UART_TOP_Waveform.png" width="950">
+    <img src="../../images/UART_TOP/UART_TOP_No_Parity.png" width="950">
 </p>
 
 The waveform demonstrates successful transmission from the UART transmitter and correct reception by the UART receiver.

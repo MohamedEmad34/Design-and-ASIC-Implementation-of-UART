@@ -1,1 +1,68 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : UART_TOP
+Version: G-2012.06-SP2
+Date   : Sat Aug  3 09:36:54 2019
+****************************************
+
+Operating Conditions: worst_low   Library: NangateOpenCellLibrary_ss0p95vn40c
+Wire Load Model Mode: top
+
+  Startpoint: Prescale[0]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[2]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  UART_TOP           5K_hvratio_1_1        NangateOpenCellLibrary_ss0p95vn40c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[0] (in)                                        0.00       2.00 f
+  U443/ZN (INV_X1)                                        0.03       2.03 r
+  U452/ZN (NAND2_X1)                                      0.04       2.08 f
+  U453/ZN (NOR2_X1)                                       0.05       2.13 r
+  U454/ZN (NAND2_X1)                                      0.05       2.17 f
+  U455/ZN (NOR2_X1)                                       0.06       2.23 r
+  U456/ZN (XNOR2_X1)                                      0.08       2.31 r
+  U497/ZN (OAI22_X1)                                      0.05       2.36 f
+  U498/ZN (AOI221_X1)                                     0.07       2.43 r
+  U502/ZN (OAI211_X1)                                     0.05       2.48 f
+  U503/ZN (AOI21_X1)                                      0.06       2.54 r
+  U505/ZN (NAND2_X1)                                      0.05       2.58 f
+  U506/ZN (NOR3_X1)                                       0.06       2.64 r
+  U507/ZN (NAND2_X1)                                      0.03       2.68 f
+  U508/ZN (NOR2_X1)                                       0.05       2.72 r
+  U529/ZN (NAND2_X1)                                      0.04       2.76 f
+  U531/ZN (OR2_X1)                                        0.06       2.83 f
+  U532/ZN (OAI22_X1)                                      0.04       2.87 r
+  u0_uart_rx/u0_deserializer/P_DATA_reg[2]/D (DFFR_X1)
+                                                          0.01       2.88 r
+  data arrival time                                                  2.88
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  clock uncertainty                                      -0.20       9.80
+  u0_uart_rx/u0_deserializer/P_DATA_reg[2]/CK (DFFR_X1)
+                                                          0.00       9.80 r
+  library setup time                                     -0.03       9.77
+  data required time                                                 9.77
+  --------------------------------------------------------------------------
+  data required time                                                 9.77
+  data arrival time                                                 -2.88
+  --------------------------------------------------------------------------
+  slack (MET)                                                        6.90
+
+
+1
 

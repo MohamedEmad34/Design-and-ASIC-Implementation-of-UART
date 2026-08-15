@@ -92,7 +92,7 @@ GDSII
 - Configurable Prescale
 - LSB First transmission
 - Independent TX/RX logic
-- Start and Stop bit generation
+- Start and stop bit generation
 - Parallel-to-serial conversion
 - Serial-to-parallel conversion
 
@@ -452,7 +452,7 @@ The CTS stage includes:
 ### CTS Result
 
 <p align="center">
-  <img src="./images/ASIC/cts.png" width="1000">
+  <img src="./images/ASIC/CTS.png" width="1000">
 </p>
 
 ### Clock Tree
@@ -490,12 +490,6 @@ Routing includes:
 
 <p align="center">
   <img src="./images/ASIC/routing.png" width="1000">
-</p>
-
-### Final Routed Layout
-
-<p align="center">
-  <img src="./images/ASIC/routed_layout.png" width="1000">
 </p>
 
 ---

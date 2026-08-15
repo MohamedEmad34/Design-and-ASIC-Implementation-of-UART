@@ -7,6 +7,9 @@
 ![Technology](https://img.shields.io/badge/Technology-NangateOpenCellLibrary%20%2F%20FreePDK45-purple)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
+<p align="center">
+  <img src="./images/UART_TOP/Capture.PNG" width="1000">
+</p>
 A complete RTL-to-GDSII implementation of a configurable UART (Universal Asynchronous Receiver/Transmitter) using Verilog HDL and Synopsys IC Compiler, targeting the NangateOpenCellLibrary / FreePDK45 technology environment.
 
 The project covers the complete digital ASIC implementation flow, starting from RTL design and functional verification through synthesis, floorplanning, power planning, placement, Clock Tree Synthesis (CTS), routing, timing analysis, IR-drop analysis, and final physical implementation.

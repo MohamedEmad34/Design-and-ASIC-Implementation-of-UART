@@ -131,7 +131,7 @@ GDSII
 ## Architecture
 
 <p align="center">
-  <img src=".images/UART_TOP/UART_TOP_Architecture.png" width="1000">
+  <img src="./images/UART_TOP/UART_TOP_Architecture.png" width="1000">
 </p>
 
 The UART consists of independent transmitter and receiver paths integrated through the top-level `UART_TOP` module.

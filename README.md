@@ -110,7 +110,7 @@ GDSII
 - Modular RTL architecture
 - Dedicated TX and RX blocks
 - FSM-based control
-- Shift-register based serialization
+- Shift-register-based serialization
 - Parameterized data width and prescale
 
 ### ASIC Implementation
@@ -131,7 +131,7 @@ GDSII
 ## Architecture
 
 <p align="center">
-  <img src="./images/UART_TOP/UART_ARCH.png" width="1000">
+  <img src=".images/UART_TOP/UART_TOP_Architecture.png" width="1000">
 </p>
 
 The UART consists of independent transmitter and receiver paths integrated through the top-level `UART_TOP` module.
@@ -259,7 +259,7 @@ Design-and-ASIC-Implementation-of-UART
 
 The UART transmitter, receiver, and integrated top-level design were verified using dedicated Verilog testbenches.
 
-The verification covers normal UART communication as well as error scenarios.
+The verification covers both normal UART communication and error scenarios.
 
 ### Verification Summary
 
@@ -278,14 +278,14 @@ The verification covers normal UART communication as well as error scenarios.
 The following waveform demonstrates successful end-to-end UART communication.
 
 <p align="center">
-  <img src="./images/UART_TOP/no_parity_test_case.PNG" width="950">
+  <img src="./images/UART_TOP/UART_TOP_No_Parity.png" width="950">
 </p>
 
 ---
 
 # ASIC Implementation Flow
 
-The synthesized UART was implemented using Synopsys IC Compiler with the NangateOpenCellLibrary / FreePDK45 technology environment.
+The synthesized UART was implemented using Synopsys IC Compiler with the Nangate OpenCellLibrary /FreePDK45 technology environment.
 
 ```text
 Synthesis
@@ -342,7 +342,7 @@ syn/netlist/
 
 # 2. Floorplanning
 
-The synthesized design was imported into IC Compiler and a physical floorplan was created.
+The synthesized design was imported into IC Compiler, and a physical floorplan was created.
 
 The floorplanning stage includes:
 

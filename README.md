@@ -388,7 +388,7 @@ The detailed synthesis reports are available in the project repository:
 - `timing.rpt` — Critical timing path
 
 <p align="center">
-  <img src="./images/ASIC/synthesis.png" width="950">
+  <img src="./images/ASIC/UART_TOP_synthesized_netlist.png" width="950">
 </p>
 
 # 2. Floorplanning

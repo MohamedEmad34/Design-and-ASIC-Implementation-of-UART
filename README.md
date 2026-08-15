@@ -90,7 +90,7 @@ GDSII
 
 - 8-bit UART
 - Configurable Prescale
-- LSB First transmission
+- LSB-first transmission
 - Independent TX/RX logic
 - Start and stop bit generation
 - Parallel-to-serial conversion
@@ -311,34 +311,85 @@ GDSII
 
 # 1. Synthesis
 
-The RTL design was synthesized into a gate-level netlist using the target standard-cell library.
+The UART RTL design was synthesized using Synopsys Design Compiler targeting the NangateOpenCellLibrary / FreePDK45 technology environment.
 
-### Objectives
+The synthesis stage generated the gate-level netlist that was subsequently used as the starting point for the physical implementation flow.
 
-- RTL-to-gate conversion
-- Logic optimization
-- Technology mapping
-- Area optimization
-- Timing optimization
-
-### Results
+#### Synthesis Metrics
 
 | Metric | Result |
 |---|---:|
-| Cell Area | TBD |
-| Number of Cells | TBD |
-| Sequential Cells | TBD |
-| Combinational Cells | TBD |
-| WNS | TBD |
-| TNS | TBD |
+| Technology | NangateOpenCellLibrary / FreePDK45 |
+| Leaf Cell Count | 296 |
+| Combinational Cells | 241 |
+| Sequential Cells | 55 |
+| Buffer / Inverter Cells | 28 |
+| Macro Count | 0 |
+| Total Cell Area | 557.004009 |
+| Combinational Area | 264.404000 |
+| Sequential Area | 292.600009 |
+| Buffer / Inverter Area | 14.896000 |
+| Total Nets | 347 |
 
-### Gate-Level Netlist
+#### Timing Summary
 
-```text
-syn/netlist/
-```
+| Metric | Result |
+|---|---:|
+| Clock Period | 10.00 ns |
+| Critical Path Length | 0.79 ns |
+| Setup WNS | +6.99 ns |
+| Setup TNS | 0.00 ns |
+| Setup Violating Paths | 0 |
+| Worst Hold Violation | -0.10 ns |
+| Total Hold Violation | -3.87 ns |
+| Hold Violations | 55 |
 
----
+The synthesized design meets all setup timing requirements with a positive worst-case setup slack of 6.99 ns. However, hold-time violations are present and are addressed during the subsequent physical implementation and timing-closure stages.
+
+#### Power Summary
+
+| Metric | Power |
+|---|---:|
+| Cell Internal Power | 29.7513 µW |
+| Net Switching Power | 3.4950 µW |
+| Total Dynamic Power | 33.2463 µW |
+| Leakage Power | 2.4974 µW |
+| Total Power | 35.7437 µW |
+
+The power analysis shows that cell internal power is the dominant component of the total dynamic power, accounting for approximately 89%, while net switching contributes approximately 11%.
+
+#### Cell Distribution
+
+| Cell Type | Count |
+|---|---:|
+| DFFR_X1 | 43 |
+| DFFS_X1 | 12 |
+| INV_X1 | 28 |
+| NAND2_X1 | 41 |
+| OAI21_X1 | 30 |
+| AOI22_X1 | 18 |
+| XNOR2_X1 | 15 |
+| AOI221_X1 | 13 |
+| OAI221_X1 | 7 |
+| NAND3_X1 | 6 |
+| NOR3_X1 | 6 |
+| XOR2_X1 | 5 |
+
+#### Synthesis Reports
+
+The detailed synthesis reports are available in the project repository:
+
+- `area.rpt` — Area summary
+- `cell.rpt` — Cell information
+- `constraint.rpt` — Timing constraint violations
+- `power.rpt` — Power analysis
+- `qor.rpt` — Quality of Results summary
+- `reference.rpt` — Standard-cell distribution
+- `timing.rpt` — Critical timing path
+
+<p align="center">
+  <img src="./images/ASIC/synthesis.png" width="950">
+</p>
 
 # 2. Floorplanning
 

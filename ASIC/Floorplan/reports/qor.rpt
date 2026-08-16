@@ -1,1 +1,85 @@
+Information: linking reference library: /home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12/lib/Back_End/mdb. (PSYN-878)
 
+  Linking design 'UART_TOP'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  UART_TOP                    UART_TOP_2_fp.CEL
+  NangateOpenCellLibrary_ss0p95vn40c (library) /home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12/lib/Front_End/Liberty/NLDM/NangateOpenCellLibrary_ss0p95vn40c.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 981ms
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report: qor
+Design: UART_TOP
+Version: G-2012.06-ICC-SP2
+Date  : Fri Aug 16 05:30:23 2019
+****************************************
+
+
+  Timing Path Group 'CLK'
+  -----------------------------------
+  Levels of Logic:              14.00
+  Critical Path Length:          0.79
+  Critical Path Slack:           6.99
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:         -0.10
+  Total Hold Violation:         -3.87
+  No. of Hold Violations:       55.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:                296
+  Buf/Inv Cell Count:              28
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:       241
+  Sequential Cell Count:           55
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:      264.404000
+  Noncombinational Area:   292.600009
+  Buf/Inv Area:             14.896000
+  Net Area:                  0.000000
+  Net XLength       :           0.00
+  Net YLength       :           0.00
+  -----------------------------------
+  Cell Area:               557.004009
+  Design Area:             557.004009
+  Net Length       :            0.00
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:           347
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: localhost.localdomain
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  0.00
+  Mapping Optimization:                0.00
+  -----------------------------------------
+  Overall Compile Time:                0.00
+  Overall Compile Wall Clock Time:     0.00
+
+1

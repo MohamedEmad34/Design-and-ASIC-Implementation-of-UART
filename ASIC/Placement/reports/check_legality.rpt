@@ -1,1 +1,66 @@
+Information: linking reference library: /home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12/lib/Back_End/mdb. (PSYN-878)
+Information: Loading local_link_library attribute {NangateOpenCellLibrary_ss0p95vn40c.db}. (MWDC-290)
+
+  Linking design 'UART_TOP'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  UART_TOP                    UART_TOP_6_routed.CEL
+  NangateOpenCellLibrary_ss0p95vn40c (library)
+                              /home/standard_cell_libraries/NangateOpenCellLibrary_PDKv1_3_v2010_12/lib/Front_End/Liberty/NLDM/NangateOpenCellLibrary_ss0p95vn40c.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 2sec 476ms
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+
+  Loading design 'UART_TOP'
+
+
+[begin initializing data for legality checker]
+Initializing Data Structure ...
+  Reading technology information ...
+    Technology table contains 10 routable metal layers
+    This is considered as a 10-metal-layer design
+    Reading library information from DB ...
+  Reading misc information ...
+    array <unit> has 0 vertical and 85 horizontal rows
+    845 pre-routes for placement blockage/checking
+    5092 pre-routes for map congestion calculation
+  Checking information read in ...
+    design style = Horizontal masters, Horizontal rows
+  Preprocessing design ...
+    splitting rows by natural obstacles ...
+[end initializing data for legality checker]
+Warning: Die area is not an integer multiple of the minimum site height (14000), and the object's width and height are (1498900, 1490000). (PSYN-523)
+Warning: Die area is not an integer multiple of the minimum site width (1900), object's width and height (1498900, 1490000). (PSYN-523)
+
+**************************************************** 
+Check_legality: Report for Fixed Placement Cells
+Information: Use the -verbose option to get details about the legality violations. (PSYN-054)
+**************************************************** 
+(fixed placement) Cells Not on Row            : 0
+(fixed placement) Cell Overlaps               : 0
+(fixed placement) Cells overlapping blockages : 0
+(fixed placement) Orientation Violations      : 0
+(fixed placement) Site Violations             : 0
+(fixed placement) Power Strap Violations      : 0
+****************************************************** 
+
+****************************************************** 
+Check_legality: Report for Non-fixed Placement Cells
+Information: Use the -verbose option to get details about the legality violations. (PSYN-054)
+****************************************************** 
+Number of Cells Not on Row            : 0
+Number of Cell Overlaps               : 0
+Number of Cells overlapping blockages : 0
+Number of Orientation Violations      : 0
+Number of Site Violations             : 0
+Number of Power Strap Violations      : 0
+******************************************** 
+
+  Total moveable cell area: 897.2
+  Total fixed cell area: 8.5
+  Total physical cell area: 905.7
+  Core area: (150000 150000 1348900 1340000)
+1
 

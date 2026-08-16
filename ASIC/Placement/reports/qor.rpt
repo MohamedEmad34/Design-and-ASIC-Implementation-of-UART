@@ -1,1 +1,75 @@
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report: qor
+Design: UART_TOP
+Version: G-2012.06-ICC-SP2
+Date  : Fri Aug 16 05:38:27 2019
+****************************************
 
+
+  Timing Path Group 'CLK'
+  -----------------------------------
+  Levels of Logic:              14.00
+  Critical Path Length:          0.65
+  Critical Path Slack:           7.12
+  Critical Path CLK Period:     10.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:         -0.12
+  Total Hold Violation:         -5.05
+  No. of Hold Violations:       55.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:                297
+  Buf/Inv Cell Count:              29
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:       242
+  Sequential Cell Count:           55
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:      268.926000
+  Noncombinational Area:   292.600009
+  Buf/Inv Area:             18.354000
+  Net Area:                  0.000000
+  Net XLength       :        6101.24
+  Net YLength       :        5686.26
+  -----------------------------------
+  Cell Area:               561.526009
+  Design Area:             561.526009
+  Net Length       :        11787.50
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:           348
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: localhost.localdomain
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.00
+  Logic Optimization:                  0.00
+  Mapping Optimization:                0.07
+  -----------------------------------------
+  Overall Compile Time:                0.09
+  Overall Compile Wall Clock Time:     0.10
+
+1

@@ -1,1 +1,762 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 20
+Design : UART_TOP
+Version: G-2012.06-ICC-SP2
+Date   : Fri Aug 16 06:15:35 2019
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: worst_low   Library: NangateOpenCellLibrary_ss0p95vn40c
+	Parasitic source    : LPE
+	Parasitic mode      : RealRC
+	Extraction mode     : MIN_MAX
+	Extraction derating : -40/-40/-40
+
+Information: Percent of Arnoldi-based delays =  0.00%
+
+  Startpoint: u0_uart_rx/u0_edge_bit_counter/edge_count_reg[1]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_rx/u0_edge_bit_counter/edge_count_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[1]/CK (DFFR_X1)
+                                                          0.00       0.05 r
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[1]/QN (DFFR_X1)
+                                                          0.07       0.12 f
+  U378/ZN (AOI221_X2)                                     0.03 &     0.15 r
+  U104/Z (BUF_X1)                                         0.02 &     0.17 r
+  U105/Z (BUF_X1)                                         0.02 &     0.19 r
+  U106/Z (BUF_X1)                                         0.02 &     0.21 r
+  U101/Z (BUF_X1)                                         0.02 &     0.22 r
+  U103/Z (BUF_X1)                                         0.02 &     0.24 r
+  U102/Z (BUF_X1)                                         0.02 &     0.27 r
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[1]/D (DFFR_X1)
+                                                          0.00 &     0.27 r
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  clock uncertainty                                       0.20       0.25
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[1]/CK (DFFR_X1)
+                                                          0.00       0.25 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_parity/DATA_V_reg[6]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_parity/DATA_V_reg[6]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_parity/DATA_V_reg[6]/CK (DFFR_X1)          0.00       0.04 r
+  u0_uart_tx/u_parity/DATA_V_reg[6]/QN (DFFR_X1)          0.08       0.12 f
+  U416/ZN (OAI21_X4)                                      0.02 &     0.14 r
+  U65/Z (BUF_X1)                                          0.02 &     0.16 r
+  U66/Z (BUF_X1)                                          0.02 &     0.18 r
+  U67/Z (BUF_X1)                                          0.02 &     0.20 r
+  U62/Z (BUF_X1)                                          0.02 &     0.22 r
+  U64/Z (BUF_X1)                                          0.02 &     0.24 r
+  U63/Z (BUF_X1)                                          0.02 &     0.26 r
+  u0_uart_tx/u_parity/DATA_V_reg[6]/D (DFFR_X1)           0.00 &     0.26 r
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_parity/DATA_V_reg[6]/CK (DFFR_X1)          0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_parity/DATA_V_reg[5]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_parity/DATA_V_reg[5]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_parity/DATA_V_reg[5]/CK (DFFR_X1)          0.00       0.04 r
+  u0_uart_tx/u_parity/DATA_V_reg[5]/QN (DFFR_X1)          0.08       0.12 f
+  U417/ZN (OAI21_X4)                                      0.02 &     0.14 r
+  U59/Z (BUF_X1)                                          0.02 &     0.16 r
+  U61/Z (BUF_X1)                                          0.02 &     0.18 r
+  U60/Z (BUF_X1)                                          0.02 &     0.20 r
+  U56/Z (BUF_X1)                                          0.02 &     0.22 r
+  U58/Z (BUF_X1)                                          0.02 &     0.24 r
+  U57/Z (BUF_X1)                                          0.02 &     0.26 r
+  u0_uart_tx/u_parity/DATA_V_reg[5]/D (DFFR_X1)           0.00 &     0.26 r
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_parity/DATA_V_reg[5]/CK (DFFR_X1)          0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_serializer/shift_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_serializer/shift_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  u0_uart_tx/u_serializer/shift_reg_reg[1]/CK (DFFS_X1)
+                                                          0.00       0.05 r
+  u0_uart_tx/u_serializer/shift_reg_reg[1]/QN (DFFS_X1)
+                                                          0.07       0.12 r
+  U540/Z (BUF_X1)                                         0.02 &     0.14 r
+  U535/Z (BUF_X1)                                         0.02 &     0.16 r
+  U533/Z (BUF_X1)                                         0.02 &     0.18 r
+  U534/Z (BUF_X1)                                         0.02 &     0.20 r
+  U539/Z (BUF_X1)                                         0.03 &     0.22 r
+  U285/ZN (AOI22_X1)                                      0.02 &     0.24 f
+  U287/ZN (AND2_X1)                                       0.03 &     0.27 f
+  u0_uart_tx/u_serializer/shift_reg_reg[1]/D (DFFS_X1)
+                                                          0.00 &     0.27 f
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  clock uncertainty                                       0.20       0.25
+  u0_uart_tx/u_serializer/shift_reg_reg[1]/CK (DFFS_X1)
+                                                          0.00       0.25 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_fsm/current_state_reg[2]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_fsm/current_state_reg[2]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_fsm/current_state_reg[2]/CK (DFFR_X1)      0.00       0.04 r
+  u0_uart_tx/u_fsm/current_state_reg[2]/Q (DFFR_X1)       0.10       0.14 r
+  U465/Z (BUF_X1)                                         0.02 &     0.16 r
+  U462/Z (BUF_X1)                                         0.02 &     0.18 r
+  U464/Z (BUF_X1)                                         0.02 &     0.20 r
+  U463/Z (BUF_X1)                                         0.03 &     0.23 r
+  U273/ZN (OAI22_X1)                                      0.02 &     0.25 f
+  U274/ZN (INV_X1)                                        0.01 &     0.26 r
+  u0_uart_tx/u_fsm/current_state_reg[2]/D (DFFR_X1)       0.00 &     0.26 r
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_fsm/current_state_reg[2]/CK (DFFR_X1)      0.00       0.24 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_rx/u0_data_sampling/samples_reg[1]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_rx/u0_data_sampling/samples_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_rx/u0_data_sampling/samples_reg[1]/CK (DFFS_X1)
+                                                          0.00       0.04 r
+  u0_uart_rx/u0_data_sampling/samples_reg[1]/Q (DFFS_X1)
+                                                          0.08       0.12 r
+  U451/Z (BUF_X1)                                         0.02 &     0.14 r
+  U449/Z (BUF_X1)                                         0.02 &     0.16 r
+  U450/Z (BUF_X1)                                         0.03 &     0.19 r
+  U329/ZN (NAND2_X1)                                      0.03 &     0.22 f
+  U330/ZN (OAI21_X4)                                      0.02 &     0.24 r
+  U115/Z (BUF_X1)                                         0.02 &     0.26 r
+  u0_uart_rx/u0_data_sampling/samples_reg[1]/D (DFFS_X1)
+                                                          0.00 &     0.26 r
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_rx/u0_data_sampling/samples_reg[1]/CK (DFFS_X1)
+                                                          0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_rx/u0_uart_rx_fsm/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_rx/u0_parity_check/par_err_reg
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_rx/u0_uart_rx_fsm/current_state_reg[0]/CK (DFFR_X1)
+                                                          0.00       0.04 r
+  u0_uart_rx/u0_uart_rx_fsm/current_state_reg[0]/Q (DFFR_X1)
+                                                          0.09       0.13 f
+  U440/Z (BUF_X1)                                         0.02 &     0.15 f
+  U438/Z (BUF_X1)                                         0.02 &     0.18 f
+  U437/Z (BUF_X1)                                         0.02 &     0.20 f
+  U439/Z (BUF_X1)                                         0.03 &     0.23 f
+  U397/ZN (NAND2_X1)                                      0.02 &     0.25 r
+  U399/ZN (AOI211_X1)                                     0.02 &     0.26 f
+  u0_uart_rx/u0_parity_check/par_err_reg/D (DFFR_X1)      0.00 &     0.26 f
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_rx/u0_parity_check/par_err_reg/CK (DFFR_X1)     0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_fsm/baud_cnt_reg[3]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_fsm/baud_cnt_reg[3]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  u0_uart_tx/u_fsm/baud_cnt_reg[3]/CK (DFFR_X1)           0.00       0.05 r
+  u0_uart_tx/u_fsm/baud_cnt_reg[3]/QN (DFFR_X1)           0.07       0.12 r
+  U408/ZN (AOI221_X4)                                     0.04 &     0.16 f
+  U9/Z (BUF_X1)                                           0.02 &     0.18 f
+  U7/Z (BUF_X1)                                           0.02 &     0.20 f
+  U8/Z (BUF_X1)                                           0.02 &     0.23 f
+  U5/Z (BUF_X1)                                           0.02 &     0.25 f
+  U6/Z (BUF_X1)                                           0.02 &     0.27 f
+  u0_uart_tx/u_fsm/baud_cnt_reg[3]/D (DFFR_X1)            0.00 &     0.27 f
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  clock uncertainty                                       0.20       0.25
+  u0_uart_tx/u_fsm/baud_cnt_reg[3]/CK (DFFR_X1)           0.00       0.25 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_fsm/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_serializer/bit_cnt_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_fsm/current_state_reg[0]/CK (DFFR_X1)      0.00       0.04 r
+  u0_uart_tx/u_fsm/current_state_reg[0]/Q (DFFR_X1)       0.10       0.14 r
+  U190/ZN (NOR2_X1)                                       0.02 &     0.16 f
+  U257/ZN (AND2_X1)                                       0.04 &     0.20 f
+  U258/ZN (NAND2_X1)                                      0.03 &     0.23 r
+  U279/ZN (OAI22_X2)                                      0.02 &     0.24 f
+  U472/Z (BUF_X1)                                         0.02 &     0.27 f
+  u0_uart_tx/u_serializer/bit_cnt_reg[1]/D (DFFR_X1)      0.00 &     0.27 f
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_serializer/bit_cnt_reg[1]/CK (DFFR_X1)     0.00       0.24 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_parity/DATA_V_reg[3]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_parity/DATA_V_reg[3]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_parity/DATA_V_reg[3]/CK (DFFR_X1)          0.00       0.04 r
+  u0_uart_tx/u_parity/DATA_V_reg[3]/QN (DFFR_X1)          0.08       0.12 f
+  U419/ZN (OAI21_X4)                                      0.03 &     0.14 r
+  U46/Z (BUF_X1)                                          0.02 &     0.16 r
+  U48/Z (BUF_X1)                                          0.02 &     0.18 r
+  U47/Z (BUF_X1)                                          0.02 &     0.20 r
+  U43/Z (BUF_X1)                                          0.02 &     0.22 r
+  U45/Z (BUF_X1)                                          0.02 &     0.24 r
+  U44/Z (BUF_X1)                                          0.02 &     0.26 r
+  u0_uart_tx/u_parity/DATA_V_reg[3]/D (DFFR_X1)           0.00 &     0.26 r
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_parity/DATA_V_reg[3]/CK (DFFR_X1)          0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_serializer/bit_cnt_reg[2]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_serializer/bit_cnt_reg[2]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_serializer/bit_cnt_reg[2]/CK (DFFR_X1)     0.00       0.04 r
+  u0_uart_tx/u_serializer/bit_cnt_reg[2]/QN (DFFR_X1)     0.08       0.12 f
+  U262/ZN (OAI22_X4)                                      0.03 &     0.15 r
+  U491/Z (BUF_X1)                                         0.02 &     0.17 r
+  U493/Z (BUF_X1)                                         0.02 &     0.19 r
+  U492/Z (BUF_X1)                                         0.02 &     0.21 r
+  U488/Z (BUF_X1)                                         0.02 &     0.23 r
+  U490/Z (BUF_X1)                                         0.02 &     0.25 r
+  U489/Z (BUF_X1)                                         0.02 &     0.27 r
+  u0_uart_tx/u_serializer/bit_cnt_reg[2]/D (DFFR_X1)      0.00 &     0.27 r
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_serializer/bit_cnt_reg[2]/CK (DFFR_X1)     0.00       0.24 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_fsm/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_fsm/current_state_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_fsm/current_state_reg[0]/CK (DFFR_X1)      0.00       0.04 r
+  u0_uart_tx/u_fsm/current_state_reg[0]/Q (DFFR_X1)       0.10       0.14 r
+  U190/ZN (NOR2_X1)                                       0.02 &     0.16 f
+  U257/ZN (AND2_X1)                                       0.04 &     0.20 f
+  U269/ZN (NAND3_X4)                                      0.02 &     0.22 r
+  U552/Z (BUF_X1)                                         0.02 &     0.24 r
+  U270/ZN (OAI221_X1)                                     0.02 &     0.26 f
+  u0_uart_tx/u_fsm/current_state_reg[1]/D (DFFR_X1)       0.00 &     0.26 f
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_fsm/current_state_reg[1]/CK (DFFR_X1)      0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_rx/u0_uart_rx_fsm/current_state_reg[2]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_rx/u0_stop_check/stp_err_reg
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_rx/u0_uart_rx_fsm/current_state_reg[2]/CK (DFFR_X1)
+                                                          0.00       0.04 r
+  u0_uart_rx/u0_uart_rx_fsm/current_state_reg[2]/Q (DFFR_X1)
+                                                          0.09       0.14 f
+  U452/Z (BUF_X1)                                         0.02 &     0.16 f
+  U453/Z (BUF_X1)                                         0.02 &     0.18 f
+  U457/Z (BUF_X1)                                         0.04 &     0.22 f
+  U216/ZN (NAND3_X1)                                      0.03 &     0.25 r
+  U401/ZN (NOR3_X1)                                       0.02 &     0.27 f
+  u0_uart_rx/u0_stop_check/stp_err_reg/D (DFFR_X1)        0.00 &     0.27 f
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_rx/u0_stop_check/stp_err_reg/CK (DFFR_X1)       0.00       0.24 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_rx/u0_edge_bit_counter/edge_count_reg[2]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_rx/u0_edge_bit_counter/edge_count_reg[2]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[2]/CK (DFFR_X1)
+                                                          0.00       0.05 r
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[2]/QN (DFFR_X1)
+                                                          0.07       0.12 r
+  U100/Z (BUF_X1)                                         0.02 &     0.14 r
+  U99/Z (BUF_X1)                                          0.02 &     0.15 r
+  U92/Z (BUF_X1)                                          0.02 &     0.17 r
+  U93/Z (BUF_X1)                                          0.02 &     0.19 r
+  U90/Z (BUF_X1)                                          0.02 &     0.21 r
+  U91/Z (BUF_X1)                                          0.02 &     0.23 r
+  U98/Z (BUF_X1)                                          0.02 &     0.25 r
+  U381/ZN (AOI211_X1)                                     0.02 &     0.27 f
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[2]/D (DFFR_X1)
+                                                          0.00 &     0.27 f
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  clock uncertainty                                       0.20       0.25
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[2]/CK (DFFR_X1)
+                                                          0.00       0.25 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_fsm/baud_cnt_reg[2]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_fsm/baud_cnt_reg[2]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_fsm/baud_cnt_reg[2]/CK (DFFR_X1)           0.00       0.04 r
+  u0_uart_tx/u_fsm/baud_cnt_reg[2]/QN (DFFR_X1)           0.07       0.11 r
+  U583/Z (BUF_X1)                                         0.02 &     0.13 r
+  U582/Z (BUF_X1)                                         0.02 &     0.14 r
+  U571/Z (BUF_X1)                                         0.02 &     0.16 r
+  U572/Z (BUF_X1)                                         0.02 &     0.18 r
+  U569/Z (BUF_X1)                                         0.02 &     0.20 r
+  U570/Z (BUF_X1)                                         0.02 &     0.22 r
+  U584/Z (BUF_X1)                                         0.02 &     0.25 r
+  U406/ZN (AOI211_X1)                                     0.02 &     0.26 f
+  u0_uart_tx/u_fsm/baud_cnt_reg[2]/D (DFFR_X1)            0.00 &     0.26 f
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_fsm/baud_cnt_reg[2]/CK (DFFR_X1)           0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_fsm/baud_cnt_reg[1]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_fsm/baud_cnt_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  u0_uart_tx/u_fsm/baud_cnt_reg[1]/CK (DFFR_X1)           0.00       0.05 r
+  u0_uart_tx/u_fsm/baud_cnt_reg[1]/QN (DFFR_X1)           0.07       0.12 r
+  U403/ZN (AOI221_X4)                                     0.04 &     0.16 f
+  U560/Z (BUF_X1)                                         0.02 &     0.18 f
+  U561/Z (BUF_X1)                                         0.02 &     0.20 f
+  U557/Z (BUF_X1)                                         0.02 &     0.23 f
+  U559/Z (BUF_X1)                                         0.02 &     0.25 f
+  U558/Z (BUF_X1)                                         0.02 &     0.27 f
+  u0_uart_tx/u_fsm/baud_cnt_reg[1]/D (DFFR_X1)            0.00 &     0.27 f
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.05       0.05
+  clock uncertainty                                       0.20       0.25
+  u0_uart_tx/u_fsm/baud_cnt_reg[1]/CK (DFFR_X1)           0.00       0.25 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_fsm/baud_cnt_reg[5]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_fsm/baud_cnt_reg[5]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_fsm/baud_cnt_reg[5]/CK (DFFR_X1)           0.00       0.04 r
+  u0_uart_tx/u_fsm/baud_cnt_reg[5]/QN (DFFR_X1)           0.07       0.12 r
+  U413/ZN (AOI221_X4)                                     0.04 &     0.16 f
+  U20/Z (BUF_X1)                                          0.02 &     0.18 f
+  U21/Z (BUF_X1)                                          0.02 &     0.20 f
+  U17/Z (BUF_X1)                                          0.02 &     0.22 f
+  U19/Z (BUF_X1)                                          0.02 &     0.25 f
+  U18/Z (BUF_X1)                                          0.02 &     0.27 f
+  u0_uart_tx/u_fsm/baud_cnt_reg[5]/D (DFFR_X1)            0.00 &     0.27 f
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_fsm/baud_cnt_reg[5]/CK (DFFR_X1)           0.00       0.24 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[0]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[0]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_rx/u0_deserializer/P_DATA_reg[0]/CK (DFFR_X1)
+                                                          0.00       0.04 r
+  u0_uart_rx/u0_deserializer/P_DATA_reg[0]/Q (DFFR_X1)
+                                                          0.10       0.14 f
+  U359/ZN (OAI21_X1)                                      0.03 &     0.18 r
+  U360/ZN (OAI21_X4)                                      0.02 &     0.20 f
+  U432/Z (BUF_X1)                                         0.02 &     0.22 f
+  U431/Z (BUF_X1)                                         0.02 &     0.24 f
+  U430/Z (BUF_X1)                                         0.02 &     0.26 f
+  u0_uart_rx/u0_deserializer/P_DATA_reg[0]/D (DFFR_X1)
+                                                          0.00 &     0.26 f
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_rx/u0_deserializer/P_DATA_reg[0]/CK (DFFR_X1)
+                                                          0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_rx/u0_edge_bit_counter/edge_count_reg[3]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_rx/u0_edge_bit_counter/edge_count_reg[3]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[3]/CK (DFFR_X1)
+                                                          0.00       0.04 r
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[3]/QN (DFFR_X1)
+                                                          0.07       0.11 r
+  U383/ZN (AOI221_X4)                                     0.04 &     0.15 f
+  U88/Z (BUF_X1)                                          0.02 &     0.17 f
+  U89/Z (BUF_X1)                                          0.02 &     0.20 f
+  U85/Z (BUF_X1)                                          0.02 &     0.22 f
+  U86/Z (BUF_X1)                                          0.02 &     0.24 f
+  U87/Z (BUF_X1)                                          0.02 &     0.26 f
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[3]/D (DFFR_X1)
+                                                          0.00 &     0.26 f
+  data arrival time                                                  0.26
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_rx/u0_edge_bit_counter/edge_count_reg[3]/CK (DFFR_X1)
+                                                          0.00       0.24 r
+  library hold time                                       0.01       0.25
+  data required time                                                 0.25
+  --------------------------------------------------------------------------
+  data required time                                                 0.25
+  data arrival time                                                 -0.26
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+  Startpoint: u0_uart_tx/u_serializer/shift_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: u0_uart_tx/u_serializer/shift_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  u0_uart_tx/u_serializer/shift_reg_reg[0]/CK (DFFS_X1)
+                                                          0.00       0.04 r
+  u0_uart_tx/u_serializer/shift_reg_reg[0]/QN (DFFS_X1)
+                                                          0.07       0.11 r
+  U542/Z (BUF_X1)                                         0.02 &     0.13 r
+  U538/Z (BUF_X1)                                         0.02 &     0.15 r
+  U536/Z (BUF_X1)                                         0.02 &     0.17 r
+  U537/Z (BUF_X1)                                         0.02 &     0.19 r
+  U541/Z (BUF_X1)                                         0.03 &     0.22 r
+  U282/ZN (AOI22_X1)                                      0.02 &     0.24 f
+  U284/ZN (AND2_X1)                                       0.03 &     0.27 f
+  u0_uart_tx/u_serializer/shift_reg_reg[0]/D (DFFS_X1)
+                                                          0.00 &     0.27 f
+  data arrival time                                                  0.27
+
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        0.04       0.04
+  clock uncertainty                                       0.20       0.24
+  u0_uart_tx/u_serializer/shift_reg_reg[0]/CK (DFFS_X1)
+                                                          0.00       0.24 r
+  library hold time                                       0.01       0.26
+  data required time                                                 0.26
+  --------------------------------------------------------------------------
+  data required time                                                 0.26
+  data arrival time                                                 -0.27
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.01
+
+
+1
 

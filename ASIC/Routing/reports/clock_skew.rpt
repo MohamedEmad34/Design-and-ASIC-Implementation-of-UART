@@ -1,1 +1,20 @@
+ ****************************************
+Report: clock timing
+        -type skew
+        -nworst 1
+        -setup
+Design: UART_TOP
+Version: G-2012.06-ICC-SP2
+Date  : Fri Aug 16 06:14:51 2019
+****************************************
+
+  Clock: CLK
+  Clock Pin                              Latency             Skew
+----------------------------------------------------------------------------
+  u0_uart_tx/u_fsm/baud_cnt_reg[4]/CK    0.05                          wrp-+
+  u0_uart_tx/u_fsm/current_state_reg[1]/CK
+                                         0.04                0.01      wrp-+
+----------------------------------------------------------------------------
+
+1
 

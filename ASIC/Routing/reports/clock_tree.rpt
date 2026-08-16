@@ -1,1 +1,16 @@
+ 
+****************************************
+Report: clock tree
+Design: UART_TOP
+Version: G-2012.06-ICC-SP2
+Date  : Fri Aug 16 05:54:12 2019
+****************************************
+
+Information: Float pin scale factor for the 'max' operating condition of scenario 'default' is set to 1.000 (CTS-375)
+
+============= Clock Tree Summary ==============
+Clock                Sinks     CTBuffers ClkCells  Skew      LongestPath TotalDRC   BufferArea
+-----------------------------------------------------------------------------------------------
+CLK                  55        8         8         0.0088    0.0490      0              8.5120
+1
 

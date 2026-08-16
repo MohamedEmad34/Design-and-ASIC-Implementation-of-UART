@@ -1,1 +1,21 @@
 
+****************************************
+Report: clocks
+Design: UART_TOP
+Version: G-2012.06-ICC-SP2
+Date  : Fri Aug 16 06:15:39 2019
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+CLK             10.00   {0 5}               f         {CLK}
+--------------------------------------------------------------------------------
+1
+

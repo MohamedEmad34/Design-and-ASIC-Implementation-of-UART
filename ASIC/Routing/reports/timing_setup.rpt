@@ -1,1 +1,506 @@
+ 
+****************************************
+Report: timing
+        -path full
+        -delay max
+        -max_paths 10
+Design: UART_TOP
+Version: G-2012.06-ICC-SP2
+Date: Fri Aug 16 05:54:12 2019
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: worst_low   Library: NangateOpenCellLibrary_ss0p95vn40c
+	Parasitic source: LPE
+	Parasitic mode: RealRC
+	Extraction mode: MIN_MAX
+	Extraction derating: -40/-40/-40
+
+Information: Percent of Arnoldi-based delays =  0.00%
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_uart_rx_fsm/current_state_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U213/ZN (NOR4_X1)                                       0.11 &     2.55 r
+  U215/ZN (NAND2_X1)                                      0.06 &     2.61 f
+  U348/ZN (INV_X1)                                        0.04 &     2.65 r
+  U349/ZN (NAND2_X1)                                      0.02 &     2.68 f
+  U353/ZN (OAI211_X1)                                     0.02 &     2.70 r
+  U150/Z (BUF_X1)                                         0.02 &     2.72 r
+  U151/Z (BUF_X1)                                         0.02 &     2.74 r
+  U152/Z (BUF_X1)                                         0.02 &     2.76 r
+  U147/Z (BUF_X1)                                         0.02 &     2.78 r
+  U148/Z (BUF_X1)                                         0.02 &     2.80 r
+  U149/Z (BUF_X1)                                         0.02 &     2.82 r
+  u0_uart_rx/u0_uart_rx_fsm/current_state_reg[1]/D (DFFR_X1)
+                                                          0.00 &     2.82 r
+  data arrival time                                                  2.82
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.04      10.04
+  clock uncertainty                                      -0.20       9.84
+  u0_uart_rx/u0_uart_rx_fsm/current_state_reg[1]/CK (DFFR_X1)
+                                                          0.00       9.84 r
+  library setup time                                     -0.03       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -2.82
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.00
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[7]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U213/ZN (NOR4_X1)                                       0.11 &     2.55 r
+  U215/ZN (NAND2_X1)                                      0.06 &     2.61 f
+  U348/ZN (INV_X1)                                        0.04 &     2.65 r
+  U376/ZN (AOI22_X4)                                      0.02 &     2.67 f
+  U162/Z (BUF_X1)                                         0.03 &     2.70 f
+  U164/Z (BUF_X1)                                         0.02 &     2.72 f
+  U163/Z (BUF_X1)                                         0.02 &     2.74 f
+  U159/Z (BUF_X1)                                         0.02 &     2.77 f
+  U160/Z (BUF_X1)                                         0.02 &     2.79 f
+  U161/Z (BUF_X1)                                         0.02 &     2.81 f
+  u0_uart_rx/u0_deserializer/P_DATA_reg[7]/D (DFFR_X1)
+                                                          0.00 &     2.81 f
+  data arrival time                                                  2.81
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.04      10.04
+  clock uncertainty                                      -0.20       9.84
+  u0_uart_rx/u0_deserializer/P_DATA_reg[7]/CK (DFFR_X1)
+                                                          0.00       9.84 r
+  library setup time                                     -0.02       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -2.81
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.01
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[6]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U356/ZN (INV_X1)                                        0.04 &     2.48 r
+  U366/ZN (NAND4_X1)                                      0.06 &     2.54 f
+  U369/ZN (OR2_X1)                                        0.09 &     2.63 f
+  U375/ZN (OAI21_X4)                                      0.03 &     2.66 r
+  U168/Z (BUF_X1)                                         0.03 &     2.69 r
+  U167/Z (BUF_X1)                                         0.02 &     2.71 r
+  U166/Z (BUF_X1)                                         0.02 &     2.73 r
+  U165/Z (BUF_X1)                                         0.02 &     2.75 r
+  u0_uart_rx/u0_deserializer/P_DATA_reg[6]/D (DFFR_X1)
+                                                          0.00 &     2.75 r
+  data arrival time                                                  2.75
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.04      10.04
+  clock uncertainty                                      -0.20       9.84
+  u0_uart_rx/u0_deserializer/P_DATA_reg[6]/CK (DFFR_X1)
+                                                          0.00       9.84 r
+  library setup time                                     -0.03       9.81
+  data required time                                                 9.81
+  --------------------------------------------------------------------------
+  data required time                                                 9.81
+  data arrival time                                                 -2.75
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.06
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[5]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U356/ZN (INV_X1)                                        0.04 &     2.48 r
+  U366/ZN (NAND4_X1)                                      0.06 &     2.54 f
+  U369/ZN (OR2_X1)                                        0.09 &     2.63 f
+  U373/ZN (OAI21_X4)                                      0.03 &     2.66 r
+  U172/Z (BUF_X1)                                         0.03 &     2.69 r
+  U171/Z (BUF_X1)                                         0.02 &     2.71 r
+  U170/Z (BUF_X1)                                         0.02 &     2.73 r
+  U169/Z (BUF_X1)                                         0.02 &     2.75 r
+  u0_uart_rx/u0_deserializer/P_DATA_reg[5]/D (DFFR_X1)
+                                                          0.00 &     2.75 r
+  data arrival time                                                  2.75
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.05      10.05
+  clock uncertainty                                      -0.20       9.85
+  u0_uart_rx/u0_deserializer/P_DATA_reg[5]/CK (DFFR_X1)
+                                                          0.00       9.85 r
+  library setup time                                     -0.03       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -2.75
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.07
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[4]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U356/ZN (INV_X1)                                        0.04 &     2.48 r
+  U366/ZN (NAND4_X1)                                      0.06 &     2.54 f
+  U369/ZN (OR2_X1)                                        0.09 &     2.63 f
+  U371/ZN (OAI21_X4)                                      0.03 &     2.66 r
+  U176/Z (BUF_X1)                                         0.03 &     2.69 r
+  U173/Z (BUF_X1)                                         0.02 &     2.71 r
+  U174/Z (BUF_X1)                                         0.02 &     2.73 r
+  U175/Z (BUF_X1)                                         0.02 &     2.75 r
+  u0_uart_rx/u0_deserializer/P_DATA_reg[4]/D (DFFR_X1)
+                                                          0.00 &     2.75 r
+  data arrival time                                                  2.75
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.05      10.05
+  clock uncertainty                                      -0.20       9.85
+  u0_uart_rx/u0_deserializer/P_DATA_reg[4]/CK (DFFR_X1)
+                                                          0.00       9.85 r
+  library setup time                                     -0.03       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -2.75
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.07
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_tx/u_serializer/bit_cnt_reg[0]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U250/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U251/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U255/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U256/ZN (AOI21_X1)                                      0.06 &     2.40 r
+  U258/ZN (NAND2_X1)                                      0.04 &     2.44 f
+  U4/ZN (INV_X1)                                          0.06 &     2.50 r
+  U260/ZN (NAND2_X1)                                      0.05 &     2.55 f
+  U275/ZN (NAND2_X1)                                      0.03 &     2.58 r
+  U276/ZN (INV_X1)                                        0.01 &     2.59 f
+  U277/ZN (AOI22_X1)                                      0.02 &     2.62 r
+  U469/Z (BUF_X1)                                         0.02 &     2.64 r
+  U471/Z (BUF_X1)                                         0.02 &     2.66 r
+  U470/Z (BUF_X1)                                         0.02 &     2.68 r
+  U466/Z (BUF_X1)                                         0.02 &     2.70 r
+  U467/Z (BUF_X1)                                         0.02 &     2.72 r
+  U468/Z (BUF_X1)                                         0.02 &     2.74 r
+  u0_uart_tx/u_serializer/bit_cnt_reg[0]/D (DFFS_X1)      0.00 &     2.74 r
+  data arrival time                                                  2.74
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.04      10.04
+  clock uncertainty                                      -0.20       9.84
+  u0_uart_tx/u_serializer/bit_cnt_reg[0]/CK (DFFS_X1)     0.00       9.84 r
+  library setup time                                     -0.03       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -2.74
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.08
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[1]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U356/ZN (INV_X1)                                        0.04 &     2.48 r
+  U357/ZN (NAND4_X1)                                      0.05 &     2.54 f
+  U358/ZN (OR2_X1)                                        0.09 &     2.62 f
+  U362/ZN (OAI21_X4)                                      0.03 &     2.65 r
+  U426/Z (BUF_X1)                                         0.03 &     2.68 r
+  U425/Z (BUF_X1)                                         0.02 &     2.70 r
+  U424/Z (BUF_X1)                                         0.02 &     2.72 r
+  U423/Z (BUF_X1)                                         0.02 &     2.74 r
+  u0_uart_rx/u0_deserializer/P_DATA_reg[1]/D (DFFR_X1)
+                                                          0.00 &     2.74 r
+  data arrival time                                                  2.74
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.05      10.05
+  clock uncertainty                                      -0.20       9.85
+  u0_uart_rx/u0_deserializer/P_DATA_reg[1]/CK (DFFR_X1)
+                                                          0.00       9.85 r
+  library setup time                                     -0.03       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -2.74
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.08
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[2]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U356/ZN (INV_X1)                                        0.04 &     2.48 r
+  U357/ZN (NAND4_X1)                                      0.05 &     2.54 f
+  U358/ZN (OR2_X1)                                        0.09 &     2.62 f
+  U364/ZN (OAI21_X4)                                      0.03 &     2.65 r
+  U310/Z (BUF_X1)                                         0.03 &     2.68 r
+  U268/Z (BUF_X1)                                         0.02 &     2.70 r
+  U183/Z (BUF_X1)                                         0.02 &     2.72 r
+  U181/Z (BUF_X1)                                         0.02 &     2.74 r
+  u0_uart_rx/u0_deserializer/P_DATA_reg[2]/D (DFFR_X1)
+                                                          0.00 &     2.74 r
+  data arrival time                                                  2.74
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.05      10.05
+  clock uncertainty                                      -0.20       9.85
+  u0_uart_rx/u0_deserializer/P_DATA_reg[2]/CK (DFFR_X1)
+                                                          0.00       9.85 r
+  library setup time                                     -0.03       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -2.74
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.08
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_deserializer/P_DATA_reg[0]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U356/ZN (INV_X1)                                        0.04 &     2.48 r
+  U357/ZN (NAND4_X1)                                      0.05 &     2.54 f
+  U358/ZN (OR2_X1)                                        0.09 &     2.62 f
+  U360/ZN (OAI21_X4)                                      0.04 &     2.66 r
+  U432/Z (BUF_X1)                                         0.03 &     2.69 r
+  U431/Z (BUF_X1)                                         0.02 &     2.71 r
+  U430/Z (BUF_X1)                                         0.02 &     2.73 r
+  u0_uart_rx/u0_deserializer/P_DATA_reg[0]/D (DFFR_X1)
+                                                          0.00 &     2.73 r
+  data arrival time                                                  2.73
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.04      10.04
+  clock uncertainty                                      -0.20       9.84
+  u0_uart_rx/u0_deserializer/P_DATA_reg[0]/CK (DFFR_X1)
+                                                          0.00       9.84 r
+  library setup time                                     -0.03       9.81
+  data required time                                                 9.81
+  --------------------------------------------------------------------------
+  data required time                                                 9.81
+  data arrival time                                                 -2.73
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.09
+
+
+  Startpoint: Prescale[1]
+              (input port clocked by CLK)
+  Endpoint: u0_uart_rx/u0_uart_rx_fsm/current_state_reg[0]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock CLK (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  Prescale[1] (in)                                        0.00       2.00 f
+  U194/ZN (NOR3_X1)                                       0.07 &     2.07 r
+  U195/ZN (NAND2_X1)                                      0.03 &     2.10 f
+  U196/ZN (NOR2_X1)                                       0.05 &     2.15 r
+  U198/ZN (XNOR2_X1)                                      0.06 &     2.21 r
+  U199/ZN (OAI22_X1)                                      0.03 &     2.24 f
+  U200/ZN (AOI221_X1)                                     0.06 &     2.30 r
+  U207/ZN (OAI211_X1)                                     0.04 &     2.33 f
+  U208/ZN (AOI21_X1)                                      0.06 &     2.39 r
+  U211/ZN (NAND2_X1)                                      0.05 &     2.45 f
+  U213/ZN (NOR4_X1)                                       0.11 &     2.55 r
+  U215/ZN (NAND2_X1)                                      0.06 &     2.61 f
+  U348/ZN (INV_X1)                                        0.04 &     2.65 r
+  U349/ZN (NAND2_X1)                                      0.02 &     2.68 f
+  U355/ZN (OAI221_X1)                                     0.02 &     2.70 r
+  U153/Z (BUF_X1)                                         0.03 &     2.73 r
+  u0_uart_rx/u0_uart_rx_fsm/current_state_reg[0]/D (DFFR_X1)
+                                                          0.00 &     2.73 r
+  data arrival time                                                  2.73
+
+  clock CLK (rise edge)                                  10.00      10.00
+  clock network delay (propagated)                        0.04      10.04
+  clock uncertainty                                      -0.20       9.84
+  u0_uart_rx/u0_uart_rx_fsm/current_state_reg[0]/CK (DFFR_X1)
+                                                          0.00       9.84 r
+  library setup time                                     -0.03       9.82
+  data required time                                                 9.82
+  --------------------------------------------------------------------------
+  data required time                                                 9.82
+  data arrival time                                                 -2.73
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.09
+
+
+1
 
